@@ -28,11 +28,11 @@
 Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number
 Theory" von J. S. Milne. Diese Übertragungen in das Deutsche basieren
 auf der Version 3.08 vom 19. Juli 2020. Das englische Original ---
-neben weiteren Texten und Kursnotizen --- finden sich hier:
+neben weiteren Texten und Notizen --- findet sich hier:
 https://www.jmilne.org/math/CourseNotes/.
 
-Dank gebührt damit immer dem Autor, etwaige Fehler, Ungenauigkeiten
-und Ungelenkheiten gehen dagegen einzig auf das Konto des laienhaften
+Dank gebührt damit immer dem Autor; etwaige Fehler, Ungenauigkeiten
+und Ungelenkheiten gehen einzig auf das Konto des laienhaften
 Übersetzers.
 
 Andreas Kellers, November 2022
