@@ -77,8 +77,8 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
     \left(\frac{p}{q}\right) \left(\frac{q}{q}\right) = (-1)^{(p-1)(q-1)/4}
   \end{equation*}
   Er bewies ein Ergebnis, dass folgendes lokal-global Prinzip für
-  quadratische Formen $Q(x, y, z)$ in drei Variablen über
-  $\mathbb{Q}$: $Q$ hat ein nicht-triviale Lösung in $\mathbb{Q}$
-  genau dann, wenn es eine Lösung in $\mathbb{R}$ gibt und $Q \equiv 0 \,
+  quadratische Formen $Q(x, y, z)$ in drei Variablen über $\mathbb{Q}$
+  impliziert: $Q$ hat ein nicht-triviale Lösung in $\mathbb{Q}$ genau
+  dann, wenn es eine Lösung in $\mathbb{R}$ gibt und $Q \equiv 0 \,
   \mathrm{mod} \; p^n$ hat eine nicht-triviale Lösung für alle $p$ und
-  $n$.  
+  $n$.
