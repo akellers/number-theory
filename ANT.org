@@ -40,9 +40,9 @@ Andreas Kellers, November 2022
 * Bibliografische Information
 
 Ein algebraischer Zahlkörper ist eine endliche Erweiterung von
-$\mathbb{Q}$; eine algbraische Zahl ist Element eines algebraischen
+$\mathbb{Q}$; eine algebraische Zahl ist Element eines algebraischen
 Zahlkörpers. Algebraische Zahlentheorie untersucht die Arithmetik
-algebraischer Zahlenkörper -- den Ring der ganzen Zahlen in dem
+algebraischer Zahlkörper -- den Ring der ganzen Zahlen in dem
 Zahlkörper; den Idealen und Einheiten in diesem; das Maß, in dem
 eindeutige Faktorisierung standhält; und so weiter.
 
@@ -61,12 +61,24 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   Lösungen der Gleichung $x^2 - ay^2=1$ für $a \in \mathbb{Z}$ zu
   finden. Im Kern ist das die Frage nach den Einheiten in
   $\mathbb{Z}[\sqrt{a}]$. Brouncker erfand einen Algorithmus hierfür,
-  unterließ es aber zu bewseisen, dass der Algorithmus immer
+  unterließ es aber zu beweisen, dass der Algorithmus immer
   funktioniert.
-- /Euler/ (1707 - 1783): Er nutze Analysis zum Studim von Primzahlen
+- /Euler/ (1707 - 1783): Er nutze Analysis zum Studium von Primzahlen
   und entdeckte eine frühe Version des quadratischen
   Reziprozitätsgesetzes.
 - /Lagrange/ (1736 - 1813): Er bewies, dass der Algorithmus zur Lösung
   der obigen Gleichung immer zu einer Lösung führt, und dass sich jede
   positive ganze Zahl als Summe von vier Quadratzahlen darstellen
   lässt.
+- /Legrendre/ (1752 - 1833): Führte das "Legrendre-Symbol"
+  $(\frac{m}{p})$ ein und fand die vollständige Form des quadratischen
+  Reziprozitätsgesetzes für ungerade Primzahlen $p$ und $q$:
+  \begin{equation*}
+    \left(\frac{p}{q}\right) \left(\frac{q}{q}\right) = (-1)^{(p-1)(q-1)/4}
+  \end{equation*}
+  Er bewies ein Ergebnis, dass folgendes lokal-global Prinzip für
+  quadratische Formen $Q(x, y, z)$ in drei Variablen über
+  $\mathbb{Q}$: $Q$ hat ein nicht-triviale Lösung in $\mathbb{Q}$
+  genau dann, wenn es eine Lösung in $\mathbb{R}$ gibt und $Q \equiv 0 \,
+  \mathrm{mod} \; p^n$ hat eine nicht-triviale Lösung für alle $p$ und
+  $n$.  
