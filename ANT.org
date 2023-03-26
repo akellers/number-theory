@@ -1,0 +1,62 @@
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Algebraische Zahlentheorie
+#+date: <2022-11-28 Mon>
+#+author: Andreas Kellers
+#+email: andreas.kellers@gmail.com
+#+language: de
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.5.5)
+#+cite_export:
+
+* Vorbemerkung
+
+Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number
+Theory" von J. S. Milne. Diese Übertragungen in das Deutsche basieren
+auf der Version 3.08 vom 19. Juli 2020. Das englische Original ---
+neben weiteren Texten und Kursnotizen --- finden sich hier:
+https://www.jmilne.org/math/CourseNotes/.
+
+Dank gebührt damit immer dem Autor, etwaige Fehler, Ungenauigkeiten
+und Ungelenkheiten gehen dagegen einzig auf das Konto des laienhaften
+Übersetzers.
+
+Andreas Kellers, November 2022
+
+* Bibliografische Information
+
+Ein algebraischer Zahlkörper ist eine endliche Erweiterung von
+$\mathbb{Q}$; eine algbraische Zahl ist Element eines algebraischen
+Zahlkörpers. Algebraische Zahlentheorie untersucht die Arithmetik
+algebraischer Zahlenkörper -- den Ring der ganzen Zahlen in dem
+Zahlkörper; den Idealen und Einheiten in diesem; das Maß, in dem
+eindeutige Faktorisierung standhält; und so weiter.
+
+Eine abelsche Körpererweiterung ist eine Galois-Erweiterung eines
+Körpers mit abelscher Galois-Gruppe. Klassenkörpertheorie beschreibt
+die abelschen Erweiterungen eines Zahlkörpers mit der Arithmetik des
+Körpers.
+
+Diese Notizen sind der algebraischen Zahlentheorie gewidmet. Der
+Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
+
+* Dramatis Personae
+
+- /Fermat/ (1601 - 1665). Postulierte das gleichnamige "Theorem" und
+  bewies für $m=4$. Er formulierte auch das Problem, die ganzzahligen
+  Lösungen der Gleichung $x^2 - ay^2=1$ für $a \in \mathbb{Z}$ zu
+  finden. Im Kern ist das die Frage nach den Einheiten in
+  $\mathbb{Z}[\sqrt{a}]$. Brouncker erfand einen Algorithmus hierfür,
+  unterließ es aber zu bewseisen, dass der Algorithmus immer
+  funktioniert.
+- /Euler/ (1707 - 1783): Er nutze Analysis zum Studim von Primzahlen
+  und entdeckte eine frühe Version des quadratischen
+  Reziprozitätsgesetzes.
+- /Lagrange/ (1736 - 1813): Er bewies, dass der Algorithmus zur Lösung
+  der obigen Gleichung immer zu einer Lösung führt, und dass sich jede
+  positive ganze Zahl als Summe von vier Quadratzahlen darstellen
+  lässt.
