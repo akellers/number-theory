@@ -82,3 +82,23 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   dann, wenn es eine Lösung in $\mathbb{R}$ gibt und $Q \equiv 0 \,
   \mathrm{mod} \; p^n$ hat eine nicht-triviale Lösung für alle $p$ und
   $n$.
+- /Gauss/ (1777 - 1855): Fand den ersten Beweis des quadratischen
+  Reziprozitätsgesetzes. Er untersuchte die Gaussschen Zahlen
+  $\mathbb{Z}[i]$, um ein quartisches Reziprozitätsgesetz zu
+  finden. Er studierte die Klassifikation binärer quadratsicher Formen
+  über $\mathbb{Z}$, die eng verbunden ist mit der Frage nach der
+  Klassenzahl quadratischer Zahlkörper.
+- /Dirichlet/ (1805 - 1859): Führte $L$ Reihen ein und bewies mit
+  ihnen eine analytische Formel für die Klassenzahl und ein Theorem
+  zur Dichte der Primzahlen in arithmetischer Progression. Er bewies
+  folgendes "Einheiten-Theorem": Sei $\alpha$ eine Lösung des
+  irredzubiblen Polynoms $f(x)$ mit ganzzahligen
+  Koeffizienten. Angenommen, $f(x)$ hat $r$ reelle und $2s$ komplexe
+  Wurzeln. Dann ist $\mathbb{Z}[\alpha]^\times$ eine endlich erzeugte
+  Gruppe vom Rang $r+s-1$.
+- /Kummer/ (1810 - 1893): Ausgelöst von der Suche nach höheren
+  Reziprozitätsgesetzen untersuchte er die grundlegende Arithmetik von
+  Kreisteilungskörpern und zeigte, dass die eindeutige Faktorisierung
+  durch die Einführung von "Idealen Zahlen" wiederhergestellt werden
+  kann. Und er bewies Fermats Theorem für reguläre Primzahlen.
+
