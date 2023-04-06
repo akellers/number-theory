@@ -85,14 +85,14 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
 - /Gauss/ (1777 - 1855): Fand den ersten Beweis des quadratischen
   Reziprozitätsgesetzes. Er untersuchte die Gaussschen Zahlen
   $\mathbb{Z}[i]$, um ein quartisches Reziprozitätsgesetz zu
-  finden. Er studierte die Klassifikation binärer quadratsicher Formen
+  finden. Er studierte die Klassifikation binärer quadratischer Formen
   über $\mathbb{Z}$, die eng verbunden ist mit der Frage nach der
   Klassenzahl quadratischer Zahlkörper.
-- /Dirichlet/ (1805 - 1859): Führte $L$ Reihen ein und bewies mit
+- /Dirichlet/ (1805 - 1859): Führte $L-\mathrm{Reihen}$ ein und bewies mit
   ihnen eine analytische Formel für die Klassenzahl und ein Theorem
   zur Dichte der Primzahlen in arithmetischer Progression. Er bewies
   folgendes "Einheiten-Theorem": Sei $\alpha$ eine Lösung des
-  irredzubiblen Polynoms $f(x)$ mit ganzzahligen
+  irreduziblen Polynoms $f(x)$ mit ganzzahligen
   Koeffizienten. Angenommen, $f(x)$ hat $r$ reelle und $2s$ komplexe
   Wurzeln. Dann ist $\mathbb{Z}[\alpha]^\times$ eine endlich erzeugte
   Gruppe vom Rang $r+s-1$.
@@ -101,4 +101,38 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   Kreisteilungskörpern und zeigte, dass die eindeutige Faktorisierung
   durch die Einführung von "Idealen Zahlen" wiederhergestellt werden
   kann. Und er bewies Fermats Theorem für reguläre Primzahlen.
-
+- /Hermite/ (1822 - 1901): Er machte wichtige Zuarbeiten zu
+  quadratischen Formen und zeigte, dass die Nullstellen eines Polynoms
+  vom Grad 5 mit elliptischen Funktionen ausgedrückt werden können.
+- /Eisenstein/ (1823 - 1852): Veröffentlichte als erster die
+  vollständigen Beweise für die kubischen und quartischen
+  Reziprozitätsgesetze.
+- /Kronecker/ (1823 - 1891): Er entwickelte eine Alternative zu
+  Dedekinds Idealen. Von ihm stammt eine der schönsten Ideen in der
+  Mathematik: Die Erzeugung abelscher Erweiterungen von Zahlkörpern
+  (/Kroneckers liebster Jugendtraum/).
+- /Riemann/ (1826 - 1866): Untersuchte die Riemansche Zeta-Funktion
+  und stellte die Riemannsche Vermutung auf.
+- /Dedekind/ (1831 - 1916). Legte die moderne Grundlagen der
+  algebraischen Zahlentheorie durch eine korrekte Definition des Rings
+  der ganzen Zahlen in einem Zahlkörper. Er bewies, dass sich Ideale
+  eindeutig in Primideale zerlegen und diese, modulo
+  Prinzipal-Idealen, in endliche viele Klassen fallen. Und definierte
+  die Zeta-Funktion eines Zahlkörpers.
+- /Weber/ (1842 - 1913): Ihm gelangen wichtige Fortschritte in der
+  Klassenkörpertheorie und "Kroneckers Jugendtraum".
+- /Hensel/ (1861 - 1941): Definierte als erster $p$-adische Zahlkörper
+  (als Menge der unendlichen Summen $\sum_{n=-k}^\infty a_n p^n, a_n
+  \in \{0, 1, \dots, p-1\}$).
+- /Hilbert/ (1862 - 1943): Er verfasste in 1897 eine einflussreiche
+  erste Gesamtdarstellung über die algebraische Zahlentheorie. Einige
+  seiner berühmten Probleme zielten auf die Zahlentheorie und waren
+  ebenso einflussreich.
+- /Takagi/ (1875 - 1960): Bewies das Fundamentaltheorem der abelschen
+  Klassenkörpertheorie, wie durch Weber und Hilbert vermutet.
+- /Noether/ (1882 - 1935): Legte zusammen mit Artin die Grundlagen
+  moderner Algebra, die Axiome und eine konzeptionelle Argumentation
+  betont. Sie trug bei zur Klassifikation zentraler, einfacher
+  Algebren über Zahlkörper.
+- /Hecke/ (1887 - 1947): Führte Hecke $L$-Serien als Generalisierung
+  von Dirichlets $L$-Serien und Dedekinds Zeta-Funktion ein.
