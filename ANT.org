@@ -23,20 +23,6 @@
 #+latex_compiler: pdflatex
 #+date: \today
 
-* Vorbemerkung
-
-Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number
-Theory" von J. S. Milne. Diese Übertragungen in das Deutsche basieren
-auf der Version 3.08 vom 19. Juli 2020. Das englische Original ---
-neben weiteren Texten und Notizen --- findet sich hier:
-https://www.jmilne.org/math/CourseNotes/.
-
-Dank gebührt damit immer dem Autor; etwaige Fehler, Ungenauigkeiten
-und Ungelenkheiten gehen einzig auf das Konto des laienhaften
-Übersetzers.
-
-Andreas Kellers, November 2022
-
 * Bibliografische Information
 
 Ein algebraischer Zahlkörper ist eine endliche Erweiterung von
@@ -53,6 +39,20 @@ Körpers.
 
 Diese Notizen sind der algebraischen Zahlentheorie gewidmet. Der
 Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
+
+* Vorbemerkung
+
+Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number
+Theory" von J. S. Milne. Diese Übertragungen in das Deutsche basieren
+auf der Version 3.08 vom 19. Juli 2020. Das englische Original ---
+neben weiteren Texten und Notizen --- findet sich hier:
+https://www.jmilne.org/math/CourseNotes/.
+
+Dank gebührt damit immer dem Autor; etwaige Fehler, Ungenauigkeiten
+und Ungelenkheiten gehen einzig auf das Konto des laienhaften
+Übersetzers.
+
+Andreas Kellers, November 2022
 
 * Dramatis Personae
 
@@ -136,3 +136,42 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   Algebren über Zahlkörper.
 - /Hecke/ (1887 - 1947): Führte Hecke $L$-Serien als Generalisierung
   von Dirichlets $L$-Serien und Dedekinds Zeta-Funktion ein.
+- /Artin/ (1898 - 1947): Fand das "Artinsche Reziprozitätsgesetz"
+  (als Verbesserung der Ergebnisse von Takagi), das
+  zentrale Theorem der Klassenkörpertheorie und führte die Artinschen
+  $L$-Reihen ein.
+- /Hasse/ (1898 - 1979): Legte den ersten Beweis der lokalen
+  Klassenkörpertheorie vor, bewies das Lokal-Global-Prinzip von Hasse
+  und lieferte Beiträge zur Klassifikation der zentralen, einfachen
+  Algebren über Zahlkörpern.
+- /Brauer/ (1901 - 1977): Definierte die Brauer-Gruppe und war
+  beteiligt an der Klassifikation zentraler einfacher Algebren über
+  Zahlkörpern.
+- /Weil/ (1906 - 1998): Definierte die Weil-Gruppe, die eine
+  Vereinheitlichung von Artinschen und Heckeschen $L$-Reihen
+  ermöglichte.
+- /Chevalley/ (1909 - 1984): Die Hauptaussagen der
+  Klassenkörpertheorie sind rein algebraisch, alle bisherigen Beweise
+  verwendeten die Analysis. Von Chevalley stammt der erste rein
+  algebraische Beweis. Seine Einführung von Idèlen erlaubte eine
+  natürliche Formulierung der Klassenkörpertheorie für abelsche
+  Erweiterungen.
+- /Iwasawa/ (1917 - 1998): Initiierte einen wichtigen neuen Ansatz in
+  der algebraischen Zahlentheorie auf Basis der Theorie von Kurven
+  über endlichen Körpern.
+- /Tate/ (1925 - 2019): Bewies neue Ergebnisse in der
+  Gruppen-Kohomologie, die eine elegante Neuformulierung der
+  Klassenkörpertheorie erlaubten. Mit Lubin fand er einen expliziten
+  Weg zur Generierung abelscher Erweiterungen lokaler Körper.
+- Langlands (1936 - ): Das Langslands-Programm ist eine breite Palette
+  an Vermutungen, unter anderem eine nicht-abelsche
+  Klassenkörpertheorie.
+
+* Einführung
+
+  #+BEGIN_QUOTE
+  Es ist sehr zu beklagen, dass die Tugend [der rationalen Zahlen], in
+  Primzahlen zerlegbar zu sein, und immer in die gleichen für eine
+  gegebene Zahl, den ganzen Zahlen Kreisteilungskörpern nicht zu eigen
+  ist. -- Kummer 1844 (übersetzt von André Weil).
+  #+END_QUOTE
