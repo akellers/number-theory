@@ -79,16 +79,15 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   Er bewies ein Ergebnis, dass folgendes lokal-global Prinzip für
   quadratische Formen $Q(x, y, z)$ in drei Variablen über $\mathbb{Q}$
   impliziert: $Q$ hat ein nicht-triviale Lösung in $\mathbb{Q}$ genau
-  dann, wenn es eine Lösung in $\mathbb{R}$ gibt und $Q \equiv 0 \,
-  \mathrm{mod} \; p^n$ hat eine nicht-triviale Lösung für alle $p$ und
-  $n$.
+  dann, wenn es eine Lösung in $\mathbb{R}$ gibt und $Q \equiv 0
+  \pmod{ p^n}$ hat eine nicht-triviale Lösung für alle $p$ und $n$.
 - /Gauss/ (1777 - 1855): Fand den ersten Beweis des quadratischen
   Reziprozitätsgesetzes. Er untersuchte die Gaussschen Zahlen
   $\mathbb{Z}[i]$, um ein quartisches Reziprozitätsgesetz zu
   finden. Er studierte die Klassifikation binärer quadratischer Formen
   über $\mathbb{Z}$, die eng verbunden ist mit der Frage nach der
   Klassenzahl quadratischer Zahlkörper.
-- /Dirichlet/ (1805 - 1859): Führte $L-\mathrm{Reihen}$ ein und bewies mit
+- /Dirichlet/ (1805 - 1859): Führte $L\text{-Reihen}$ ein und bewies mit
   ihnen eine analytische Formel für die Klassenzahl und ein Theorem
   zur Dichte der Primzahlen in arithmetischer Progression. Er bewies
   folgendes "Einheiten-Theorem": Sei $\alpha$ eine Lösung des
@@ -111,9 +110,9 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   Dedekinds Idealen. Von ihm stammt eine der schönsten Ideen in der
   Mathematik: Die Erzeugung abelscher Erweiterungen von Zahlkörpern
   (/Kroneckers liebster Jugendtraum/).
-- /Riemann/ (1826 - 1866): Untersuchte die Riemansche Zeta-Funktion
+- /Riemann/ (1826 - 1866): Untersuchte die Riemannsche Zeta-Funktion
   und stellte die Riemannsche Vermutung auf.
-- /Dedekind/ (1831 - 1916). Legte die moderne Grundlagen der
+- /Dedekind/ (1831 - 1916). Legte die modernen Grundlagen der
   algebraischen Zahlentheorie durch eine korrekte Definition des Rings
   der ganzen Zahlen in einem Zahlkörper. Er bewies, dass sich Ideale
   eindeutig in Primideale zerlegen und diese, modulo
@@ -121,9 +120,9 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   die Zeta-Funktion eines Zahlkörpers.
 - /Weber/ (1842 - 1913): Ihm gelangen wichtige Fortschritte in der
   Klassenkörpertheorie und "Kroneckers Jugendtraum".
-- /Hensel/ (1861 - 1941): Definierte als erster $p$-adische Zahlkörper
-  (als Menge der unendlichen Summen $\sum_{n=-k}^\infty a_n p^n, a_n
-  \in \{0, 1, \dots, p-1\}$).
+- /Hensel/ (1861 - 1941): Definierte als erster $p\text{-adische}$
+  Zahlkörper (als Menge der unendlichen Summen $\sum_{n=-k}^\infty a_n
+  p^n, a_n \in \{0, 1, \dots, p-1\}$).
 - /Hilbert/ (1862 - 1943): Er verfasste in 1897 eine einflussreiche
   erste Gesamtdarstellung über die algebraische Zahlentheorie. Einige
   seiner berühmten Probleme zielten auf die Zahlentheorie und waren
@@ -134,12 +133,13 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   moderner Algebra, die Axiome und eine konzeptionelle Argumentation
   betont. Sie trug bei zur Klassifikation zentraler, einfacher
   Algebren über Zahlkörper.
-- /Hecke/ (1887 - 1947): Führte Hecke $L$-Serien als Generalisierung
-  von Dirichlets $L$-Serien und Dedekinds Zeta-Funktion ein.
+- /Hecke/ (1887 - 1947): Führte Hecke $L\text{-Serien}$ als
+  Generalisierung von Dirichlets $L\text{-Serien}$ und Dedekinds
+  Zeta-Funktion ein.
 - /Artin/ (1898 - 1947): Fand das "Artinsche Reziprozitätsgesetz"
   (als Verbesserung der Ergebnisse von Takagi), das
   zentrale Theorem der Klassenkörpertheorie und führte die Artinschen
-  $L$-Reihen ein.
+  $L\text{-Reihen}$ ein.
 - /Hasse/ (1898 - 1979): Legte den ersten Beweis der lokalen
   Klassenkörpertheorie vor, bewies das Lokal-Global-Prinzip von Hasse
   und lieferte Beiträge zur Klassifikation der zentralen, einfachen
@@ -148,7 +148,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   beteiligt an der Klassifikation zentraler einfacher Algebren über
   Zahlkörpern.
 - /Weil/ (1906 - 1998): Definierte die Weil-Gruppe, die eine
-  Vereinheitlichung von Artinschen und Heckeschen $L$-Reihen
+  Vereinheitlichung von Artinschen und Heckeschen $L\mathrm{-Reihen}$
   ermöglichte.
 - /Chevalley/ (1909 - 1984): Die Hauptaussagen der
   Klassenkörpertheorie sind rein algebraisch, alle bisherigen Beweise
@@ -167,11 +167,90 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   an Vermutungen, unter anderem eine nicht-abelsche
   Klassenkörpertheorie.
 
-* Einführung
+* TODO Einführung
 
   #+BEGIN_QUOTE
   Es ist sehr zu beklagen, dass die Tugend [der rationalen Zahlen], in
   Primzahlen zerlegbar zu sein, und immer in die gleichen für eine
-  gegebene Zahl, den ganzen Zahlen Kreisteilungskörpern nicht zu eigen
-  ist. -- Kummer 1844 (übersetzt von André Weil).
+  gegebene Zahl, den ganzen Zahlen in Kreisteilungskörpern nicht zu
+  eigen ist. -- Kummer 1844 (übersetzt von André Weil).
   #+END_QUOTE
+
+  Das /*Fundamentaltheorem der Arithmetik*/ besagt, dass jede ganze Zahl
+  ungleich 0 geschrieben werden kann als
+  \begin{equation*}
+    m = \pm p_1 \cdots p_n, \quad p_i \quad \text{Primzahlen,}
+  \end{equation*}
+  und dass diese Faktorisierung grundsätzlich eindeutig ist.
+
+  Betrachten wir allgemeiner einen Integritätsring $A$. Ein Element $a
+  \in A$ ist eine /*Einheit*/, wenn es in $A$ ein Inverses hat (ein
+  Element $b \in A$ mit $ab = 1 = ba$). Die multiplikative Gruppe der
+  Einheiten bezeichnen wir mit $A^\times$. Ein Element $\pi$ aus $A$
+  wird /*prim*/ genannt, wenn es weder die 0 ist, noch eine Einheit
+  und wenn gilt:
+  \begin{equation*}
+    \pi | ab \Rightarrow \pi | a \quad \text{oder} \quad \pi | b.
+  \end{equation*}
+
+  Ist $A$ ein Hauptidealring, kann jedes Element $a$ von $A$ ungleich 0
+  geschrieben werden als
+  \begin{equation*}
+    a = u \pi_1 \cdots \pi_{n}, \qquad u \quad \text{Einheit und}
+        \quad \pi_{i} \quad \text{Primelementen}
+  \end{equation*}
+  und diese Faktorisierung ist eindeutig bis auf die Reihenfolge und
+  den Austausch von jedem $\pi_i$ durch ein Produkt mit einer
+  Einheit.
+
+  Eine erste Frage lautet nun, inwieweit diese Eindeutigkeit der
+  Primfaktorzerlegung in Zahlkörpern Bestand hat oder nicht mehr
+  gilt. Diese Frage geht einher mit drei Problemen: Erstens ergibt
+  Faktorisierung in einem Körper nur Sinn unter Bezugnahme auf einen
+  Unterring. Wir benötigen also einen "Ring der ganzen Zahlen"
+  $\mathcal{O}_K$ in dem Zahlkörper $K$. Zweitens, da eine eindeutige
+  Faktorisierung im allgemeinen nicht gilt, benötigen wir einen Weg,
+  um zu messen, wie weit die eindeutige Faktorisierung nicht mehr
+  gilt. Und drittens benötigen wir, da Faktorisierung nur eindeutig
+  bis auf Einheiten definiert ist, ein Verständnis über die Struktur
+  der Gruppe der Einheiten $U_K$ in $\mathcal{O}_K$.
+  
+** Der Ring der ganzen Zahlen
+
+   Sei $K$ ein algebraischer Zahlkörper. Jedes Element $\alpha$ von
+   $K$ erfüllt eine Gleichung
+   \begin{equation*}
+     \alpha^{n} + a_{1}\alpha^{n-1} + \cdots + a_{n} = 0
+   \end{equation*}
+   mit Koeffizienten $a_1, \ldots, a_n$ in $\mathbb{Q}$. $\alpha$ ist
+   eine /*algebraische ganze Zahl*/, wenn es eine solche Gleichung mit
+   Koeffizienten $a_1, \ldots, a_n$ in $\mathbb{Z}$ erfüllt. Wir
+   werden sehen, dass die algebraischen ganzen Zahlen einen Unterring
+   $\mathcal{O}_K$ von $K$ bilden.
+
+   Eine algebraische Zahl ist genau dann eine ganze Zahl, wenn ihr
+   Minimalpolynom über $\mathbb{Q}$ Kooeffizienten in $\mathbb{Z}$
+   hat. Man betrachte z.B. den Körper $K = \mathbb{Q}[\sqrt{d}]$ mit
+   einer ganzen, quadratfreien Zahl $d$. Das Minimalpolynom von
+   $\alpha = a + b\sqrt{d}$ mit $b \neq 0$, $a, b \in \mathbb{Q}$ ist
+   \begin{equation*}
+     (X - (a + b\sqrt{d})) (X - (a - b\sqrt{d}))
+        = X^{2} - 2aX + (a^{2} - b^{2}d),
+   \end{equation*}
+   also ist $\alpha$ genau dann eine algebraische ganze Zahl, wenn
+   \begin{equation*}
+     2a \in \mathbb{Z} \quad \text{und} \quad a^{2}-b^{2}d \in \mathbb{Z}.
+   \end{equation*}
+   Hieraus folgt, dass $\alpha$ eine algebraische ganze Zahl ist, wenn
+   $d = 2,3 \pmod 4$ und $a$ und $b$ ganze Zahlen sind, d.h.:
+   \begin{equation*}
+     \mathcal{O}_{K} = \mathbb{Z}[\sqrt{d}]
+       = \left\{a + b\sqrt{d} \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
+   \end{equation*}
+   Ist im verbleibenden Fall $d = 1 \pmod 4$, ist $\alpha$ eine
+   algebraische ganze Zahl genau dann, wenn $a$ und $b$ beides ganze
+   Zahlen oder beide halbe Zahlen sind, d.h.:
+   \begin{equation*}
+     \mathcal{O}_{K} = \mathbb{Z}[\frac{1+\sqrt{d}}{2}]
+       = \left\{a + b\frac{1+\sqrt{d}}{2} \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
+   \end{equation*}
