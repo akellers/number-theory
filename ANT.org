@@ -179,7 +179,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   Das /*Fundamentaltheorem der Arithmetik*/ besagt, dass jede ganze Zahl
   ungleich 0 geschrieben werden kann als
   \begin{equation*}
-    m = \pm p_1 \cdots p_n, \quad p_i \quad \text{Primzahlen,}
+    m = \pm p_1 \cdots p_n, \quad p_i \enspace \text{Primzahlen,}
   \end{equation*}
   und dass diese Faktorisierung grundsätzlich eindeutig ist.
 
@@ -190,14 +190,14 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   wird /*prim*/ genannt, wenn es weder die 0 ist, noch eine Einheit
   und wenn gilt:
   \begin{equation*}
-    \pi | ab \Rightarrow \pi | a \quad \text{oder} \quad \pi | b.
+    \pi | ab \Rightarrow \pi | a \enspace \text{oder} \enspace \pi | b.
   \end{equation*}
 
   Ist $A$ ein Hauptidealring, kann jedes Element $a$ von $A$ ungleich 0
   geschrieben werden als
   \begin{equation*}
-    a = u \pi_1 \cdots \pi_{n}, \qquad u \quad \text{Einheit und}
-        \quad \pi_{i} \quad \text{Primelementen}
+    a = u \pi_1 \cdots \pi_{n}, \quad u \enspace \text{Einheit und}
+        \enspace \pi_{i} \enspace \text{Primelementen}
   \end{equation*}
   und diese Faktorisierung ist eindeutig bis auf die Reihenfolge und
   den Austausch von jedem $\pi_i$ durch ein Produkt mit einer
