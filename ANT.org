@@ -259,16 +259,63 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    \begin{equation*}
      2a \in \mathbb{Z} \quad \text{und} \quad a^{2}-b^{2}d \in \mathbb{Z}.
    \end{equation*}
-   Hieraus folgt, dass $\alpha$ eine algebraische ganze Zahl ist, wenn
-   $d = 2,3 \pmod 4$ und $a$ und $b$ ganze Zahlen sind, d.h.:
+   Hieraus folgt für den Fall $d = 2,3 \pmod 4$, dass $\alpha$ eine
+    algebraische ganze Zahl ist, wenn $a$ und $b$ ganze Zahlen sind,
+    d.h.:
    \begin{equation*}
      \mathcal{O}_{K} = \mathbb{Z}[\sqrt{d}]
        = \left\{a + b\sqrt{d} \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
    \end{equation*}
-   Ist im verbleibenden Fall $d = 1 \pmod 4$, ist $\alpha$ eine
+   Im verbleibenden Fall $d = 1 \pmod 4$ ist $\alpha$ eine
    algebraische ganze Zahl genau dann, wenn $a$ und $b$ beides ganze
    Zahlen oder beide halbe Zahlen sind, d.h.:
    \begin{equation*}
      \mathcal{O}_{K} = \mathbb{Z}[\frac{1+\sqrt{d}}{2}]
        = \left\{a + b\frac{1+\sqrt{d}}{2} \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
    \end{equation*}
+   Zum Beispiel ist $\mathcal{O}_{\mathbb{Q}[\sqrt{-5}]} =
+   \mathbb{Z}[\sqrt{-5}]$ und $\mathcal{O}_{\mathbb{Q}[\sqrt{5}]} =
+   \mathbb{Z}[(1+\sqrt{5})/2]$. Man beachte, dass $(1 + \sqrt{5})/2$
+   der Gleichung $X^2 - X - 1$ genügt, also eine algebraische ganze
+   Zahl in $\mathbb{Q}[\sqrt{5}]$ ist.
+
+   Sei $\zeta_d$ eine primitive $d\mathrm{te}$ Einheitswurzel, z.B. $\zeta_d =
+   \exp(2\pi i/d)$ und $K = \mathbb{Q}[\zeta_d]$. Wie zu hoffen,
+   werden wir sehen, dass 
+   \begin{equation*}
+     \mathcal{O}_K = \mathbb{Z}[\zeta_d] 
+       = \left\{ \sum m_i \zeta_d^i \quad \text{mit} \quad m_i \in \mathbb{Z} \right\}
+   \end{equation*}
+
+** Faktorisierung
+
+   Ein Element $\pi$ eines Integritätsrings $A$ wird als
+   /*irreduzibel*/ bezeichnet, wenn es keine Einheit ist und nicht
+   dargestellt werden kann als Produkt zweier Nicht-Einheiten. Ein
+   Primelement ist (offensichtlich) irreduzibel. Ein Ring $A$ ist ein
+   /*faktorieller Ring*/, wenn jedes Element ungleich 0 dargestellt
+   werden kann als im wesentlichen eindeutiges Produkt irreduzibler
+   Elemente. Ist der Ring der ganzen Zahlen $\mathcal{O}_K$ ein
+   faktorieller Ring? Nein, nicht im allgemeinen!
+
+   Wir werden sehen, dass zwar jedes Element von $\mathcal{O}_K$ als
+   Produkt irreduzibler Elemente geschrieben werden kann (dies gilt
+   für alle Noehterscheren Ring), aber die Eindeutigkeit nicht immer
+   gegeben ist. In $\mathbb{Z}[\sqrt{-5}]$ gilt zum Beispiel:
+   \begin{equation*}
+     6 = 2 \cdot 3 = (1 + \sqrt{-5}) (1 - \sqrt{-5}).
+   \end{equation*}
+   Dass sowohl $2, 3, 1 + \sqrt{-5}$ und $1 - \sqrt{-5}$ irreduzibel
+   sind, erkannt man durch Anwendung der Norm-Abbildung:
+   \begin{equation*}
+     \mathrm{Nm}: \mathbb{Q}[\sqrt{-5}] \rightarrow \mathbb{Q}, \quad 
+       a + b \sqrt{-5} \mapsto a^2 + 5 b^2.
+   \end{equation*}
+   Die Abbildung ist multiplikativ und man erkennt einfach, dass für
+   $\alpha \in \mathcal{O}_K$ gilt:
+   \begin{equation*}
+     \mathrm{Nm}(\alpha) = 1 \Leftrightarrow \alpha \bar{\alpha} 
+       \Leftrightarrow \alpha \enspace \text{ist eine Einheit}.
+   \end{equation*}
+   
+
