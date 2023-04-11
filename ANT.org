@@ -24,18 +24,36 @@
 #+date: \today
 
 * Vorbemerkung
+  
+  Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number
+  Theory" von J. S. Milne. Diese Übertragungen in das Deutsche basieren
+  auf der Version 3.08 vom 19. Juli 2020. Das englische Original ---
+  neben weiteren Texten und Notizen --- findet sich hier:
+  https://www.jmilne.org/math/CourseNotes/.
 
-Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number
-Theory" von J. S. Milne. Diese Übertragungen in das Deutsche basieren
-auf der Version 3.08 vom 19. Juli 2020. Das englische Original ---
-neben weiteren Texten und Notizen --- findet sich hier:
-https://www.jmilne.org/math/CourseNotes/.
+  Dank gebührt damit immer dem Autor; etwaige Fehler, Ungenauigkeiten
+  und Ungelenkheiten gehen einzig und allein auf das Konto des
+  laienhaften Übersetzers.
 
-Dank gebührt damit immer dem Autor; etwaige Fehler, Ungenauigkeiten
-und Ungelenkheiten gehen einzig und allein auf das Konto des
-laienhaften Übersetzers.
+** TODO Glossar der englischen Fachtermini
+   Hier ein kleines Glossar der zentralen englischen Fachbegriffe und
+   ihren Übersetzungen:
 
-Andreas Kellers, November 2022
+   - prime :: Primzahl oder prim
+   - unit :: Einheit (eines Rings)
+   - integral domain :: Integritätsring; ein nullteilerfreier
+	kommuativer Ring mit Einselement
+   - algebraic integer :: Algebraisch ganze Zahl; Lösung eines
+	monischen Polynoms mit ganzzahligen Koeffizienten aus
+	$\mathbb{Z}$.
+   - irreducible :: irreduzibel; d.h. keine Einheit und nicht
+                    zerlegbar in ein Produkt irreduzibler Elemente
+   - unique factorization domain (UFD) :: Faktorieller Ring (oder auch
+        Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
+        einduetiger Zerlegung in irreduzible Faktoren für Elemente
+        ungleich 0.
+
+   Andreas Kellers, November 2022 -- April 2023
 
 * Bibliografische Information
 
