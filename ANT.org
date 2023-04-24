@@ -50,7 +50,7 @@
                     zerlegbar in ein Produkt irreduzibler Elemente
    - unique factorization domain (UFD) :: Faktorieller Ring (oder auch
         Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
-        einduetiger Zerlegung in irreduzible Faktoren für Elemente
+        eindeutiger Zerlegung in irreduzible Faktoren für Elemente
         ungleich 0.
 
    Andreas Kellers, November 2022 -- April 2023
