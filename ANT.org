@@ -39,15 +39,19 @@
    Hier ein kleines Glossar der zentralen englischen Fachbegriffe und
    ihren Übersetzungen:
 
-   - prime :: Primzahl oder prim
+   - prime (number) :: Prim oder Primzahl
    - unit :: Einheit (eines Rings)
    - integral domain :: Integritätsring; ein nullteilerfreier
-	kommuativer Ring mit Einselement
+        kommuatitver Ring mit Einselement
+   - principal ideal domain :: Hautpidealring; ein Integritätsring, in
+        dem jedes Ideal ein Hauptideal ist
+   - associate :: assoziiertes Element; assoziierte Elemente sind die
+        Produkte mit einer Einheit
    - algebraic integer :: Algebraisch ganze Zahl; Lösung eines
 	monischen Polynoms mit ganzzahligen Koeffizienten aus
 	$\mathbb{Z}$.
    - irreducible :: irreduzibel; d.h. keine Einheit und nicht
-                    zerlegbar in ein Produkt irreduzibler Elemente
+        zerlegbar in ein Produkt irreduzibler Elemente
    - unique factorization domain (UFD) :: Faktorieller Ring (oder auch
         Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
         eindeutiger Zerlegung in irreduzible Faktoren für Elemente
