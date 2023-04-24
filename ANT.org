@@ -321,5 +321,40 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
      \mathrm{Nm}(\alpha) = 1 \Leftrightarrow \alpha \bar{\alpha} 
        \Leftrightarrow \alpha \enspace \text{ist eine Einheit}.
    \end{equation*}
+   Angenommen, $1 + \sqrt{-5} = \alpha \beta$, dann ist
+   $\mathrm{Nm}(\alpha \beta) = \mathrm{Nm}(1 + \sqrt{-5}) = 6$. Somit
+   muss $\mathrm{Nm}(\alpha) = 1, 2, 3$ oder $6$ sein. Im ersten Fall
+   wäre $\alpha$ eine Einheit. Die Fälle 2 und 3 treten nicht auf. Und
+   im letzten Fall ist $\beta$ eine Einheit. Die Definition der
+   Norm-Funktion impliziert, dass assoizierte Elemente die gleiche Norm
+   haben. Daher bleibt noch zu zeigen, dass $1 + \sqrt{-5}$ und $1 -
+   \sqrt{-5}$ nicht assoziiert sind, aber:
+   \begin{equation*}
+     1 + \sqrt{-5} = (a + b\sqrt{-5}) (1 - \sqrt{-5})
+   \end{equation*}
+   hat keine Lösung mit $a, b \in \mathbb{Z}$.
    
+   Warum schlägt die eindeutige Faktorisierung in $\mathcal{O}_K$
+   fehl? Das Problem ist, dass irreduzible Elemente in $\mathcal{O}_K$
+   nicht mehr prim sein müssen. In dem obigen Beispiel ist $1 +
+   \sqrt{-5}$ ein Teiler von $2 \cdot 3$, aber weder ein Teiler von 2,
+   noch von 3. Faktorisierung in einem Integritätsring (in dem diese
+   existiert, z.B. einem Noetherschen Ring) ist nur dann eindeutig,
+   wenn alle irreduziblen Elemente auch prim sind.
 
+   Was lässt sich dennoch erreichen? Man betrachte $210 = 6 \cdot 35 =
+   10 \cdot 21$. Naiv könnte man folgern, dass Faktorisierung in
+   $\mathbb{Z}$ nicht eindeutig ist. Stattdessen ist an der darunter
+   liegenden Faktorisierung $210 = (2 \cdot 3)(5 \cdot 7) = (2 \cdot
+   5)(3 \cdot 7) zu erkennen, dass diese sehr wohl eindeutig ist.
+
+   Die Idee von Kummer und Dedekind war, die Menge der Primzahlen derart
+   zu erweitern, die zum Beispiel in $\mathbb{Z}[\sqrt{-5}]$ eine
+   eindeutige Faktorisierung erlaubt. Dabei soll
+   \begin{equation*}
+     6 = (\mathfrak{p}_1^2)(\mathfrak{p}_2 \cdot \mathfrak{p}_3) =
+       (\mathfrak{p}_1 \cdot \mathfrak{p}_2)(\mathfrak{p}_1 \cdot \mathfrak{p}_3)
+   \end{equation*}
+   die der obigen Faktorisierung von 6 unterliegen.
+   
+   
