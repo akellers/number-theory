@@ -270,8 +270,8 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    algebraische ganze Zahl genau dann, wenn $a$ und $b$ beides ganze
    Zahlen oder beide halbe Zahlen sind, d.h.:
    \begin{equation*}
-     \mathcal{O}_{K} = \mathbb{Z}[\frac{1+\sqrt{d}}{2}]
-       = \left\{a + b\frac{1+\sqrt{d}}{2} \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
+     \mathcal{O}_{K} = \mathbb{Z}[(1+\sqrt{d})/2]
+       = \left\{a + b(1+\sqrt{d})/2 \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
    \end{equation*}
    Zum Beispiel ist $\mathcal{O}_{\mathbb{Q}[\sqrt{-5}]} =
    \mathbb{Z}[\sqrt{-5}]$ und $\mathcal{O}_{\mathbb{Q}[\sqrt{5}]} =
