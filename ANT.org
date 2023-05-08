@@ -35,6 +35,8 @@
   und Ungelenkheiten gehen einzig und allein auf das Konto des
   laienhaften Übersetzers.
 
+  Andreas Kellers, November 2022 -- Mai 2023
+
 ** TODO Glossar der englischen Fachtermini
    Hier ein kleines Glossar der zentralen englischen Fachbegriffe und
    ihren Übersetzungen:
@@ -56,8 +58,6 @@
      Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
      eindeutiger Zerlegung in irreduzible Faktoren für Elemente
      ungleich 0.
-
-   Andreas Kellers, November 2022 -- April 2023
 
 * Bibliografische Information
 
