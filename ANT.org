@@ -24,7 +24,7 @@
 #+date: \today
 
 * Vorbemerkung
-  
+
   Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number
   Theory" von J. S. Milne. Diese Übertragungen in das Deutsche basieren
   auf der Version 3.08 vom 19. Juli 2020. Das englische Original ---
@@ -42,20 +42,20 @@
    - prime (number) :: Prim oder Primzahl
    - unit :: Einheit (eines Rings)
    - integral domain :: Integritätsring; ein nullteilerfreier
-        kommutativer Ring mit Einselement
+	kommutativer Ring mit Einselement
    - principal ideal domain :: Hautpidealring; ein Integritätsring, in
-        dem jedes Ideal ein Hauptideal ist
+	dem jedes Ideal ein Hauptideal ist
    - associate :: assoziiertes Element; assoziierte Elemente
-        unterscheiden sich nur um den Faktor einer Einheit.
+	unterscheiden sich nur um den Faktor einer Einheit.
    - algebraic integer :: Algebraisch ganze Zahl; Lösung eines
 	monischen Polynoms mit ganzzahligen Koeffizienten aus
 	$\mathbb{Z}$.
    - irreducible :: irreduzibel; d.h. keine Einheit und nicht
-        zerlegbar in ein Produkt irreduzibler Elemente
+	zerlegbar in ein Produkt irreduzibler Elemente
    - unique factorization domain (UFD) :: Faktorieller Ring (oder auch
-        Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
-        eindeutiger Zerlegung in irreduzible Faktoren für Elemente
-        ungleich 0.
+	Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
+	eindeutiger Zerlegung in irreduzible Faktoren für Elemente
+	ungleich 0.
 
    Andreas Kellers, November 2022 -- April 2023
 
@@ -219,7 +219,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   geschrieben werden als
   \begin{equation*}
     a = u \pi_1 \cdots \pi_{n}, \quad u \enspace \text{Einheit und}
-        \enspace \pi_{i} \enspace \text{Primelementen}
+	\enspace \pi_{i} \enspace \text{Primelementen}
   \end{equation*}
   und diese Faktorisierung ist eindeutig bis auf die Reihenfolge und
   den Austausch von jedem $\pi_i$ durch ein Produkt mit einer
@@ -236,7 +236,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
   gilt. Und drittens benötigen wir, da Faktorisierung nur eindeutig
   bis auf Einheiten definiert ist, ein Verständnis über die Struktur
   der Gruppe der Einheiten $U_K$ in $\mathcal{O}_K$.
-  
+
 ** Der Ring der ganzen Zahlen
 
    Sei $K$ ein algebraischer Zahlkörper. Jedes Element $\alpha$ von
@@ -257,7 +257,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    $\alpha = a + b\sqrt{d}$ mit $b \neq 0$, $a, b \in \mathbb{Q}$ ist
    \begin{equation*}
      (X - (a + b\sqrt{d})) (X - (a - b\sqrt{d}))
-        = X^{2} - 2aX + (a^{2} - b^{2}d),
+	= X^{2} - 2aX + (a^{2} - b^{2}d),
    \end{equation*}
    also ist $\alpha$ genau dann eine algebraische ganze Zahl, wenn
    \begin{equation*}
@@ -285,9 +285,9 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
 
    Sei $\zeta_d$ eine primitive $d\mathrm{te}$ Einheitswurzel, z.B. $\zeta_d =
    \exp(2\pi i/d)$ und $K = \mathbb{Q}[\zeta_d]$. Wie zu hoffen,
-   werden wir sehen, dass 
+   werden wir sehen, dass
    \begin{equation*}
-     \mathcal{O}_K = \mathbb{Z}[\zeta_d] 
+     \mathcal{O}_K = \mathbb{Z}[\zeta_d]
        = \left\{ \sum m_i \zeta_d^i \quad \text{mit} \quad m_i \in \mathbb{Z} \right\}
    \end{equation*}
 
@@ -312,13 +312,13 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    Dass sowohl $2, 3, 1 + \sqrt{-5}$ und $1 - \sqrt{-5}$ irreduzibel
    sind, erkannt man durch Anwendung der Norm-Abbildung:
    \begin{equation*}
-     \mathrm{Nm}: \mathbb{Q}[\sqrt{-5}] \rightarrow \mathbb{Q}, \quad 
+     \mathrm{Nm}: \mathbb{Q}[\sqrt{-5}] \rightarrow \mathbb{Q}, \quad
        a + b \sqrt{-5} \mapsto a^2 + 5 b^2.
    \end{equation*}
    Die Abbildung ist multiplikativ und man erkennt einfach, dass für
    $\alpha \in \mathcal{O}_K$ gilt:
    \begin{equation*}
-     \mathrm{Nm}(\alpha) = 1 \Leftrightarrow \alpha \bar{\alpha} 
+     \mathrm{Nm}(\alpha) = 1 \Leftrightarrow \alpha \bar{\alpha}
        \Leftrightarrow \alpha \enspace \text{ist eine Einheit}.
    \end{equation*}
    Angenommen, $1 + \sqrt{-5} = \alpha \beta$, dann ist
@@ -333,7 +333,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
      1 + \sqrt{-5} = (a + b\sqrt{-5}) (1 - \sqrt{-5})
    \end{equation*}
    hat keine Lösung mit $a, b \in \mathbb{Z}$.
-   
+
    Warum schlägt die eindeutige Faktorisierung in $\mathcal{O}_K$
    fehl? Das Problem ist, dass irreduzible Elemente in $\mathcal{O}_K$
    nicht mehr prim sein müssen. In dem obigen Beispiel ist $1 +
@@ -355,6 +355,93 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
      6 = (\mathfrak{p}_1^2)(\mathfrak{p}_2 \cdot \mathfrak{p}_3) =
        (\mathfrak{p}_1 \cdot \mathfrak{p}_2)(\mathfrak{p}_1 \cdot \mathfrak{p}_3)
    \end{equation*}
-   die der obigen Faktorisierung von 6 unterliegen.
-   
-   
+   der obigen Faktorisierung von 6 unterliegen.
+
+   Wie definieren wir "ideale Faktoren"? Offensichtlich sollte ein
+   Ideal charakterisiert sein durch die algbraischen ganzen Zahlen, die
+   es teilt. Darüber hinaus sollte für die Teilbarkeit durch ein
+   Ideal $\mathfrak{a}$ folgende Regeln gelten:
+   \begin{equation*}
+     \mathfrak{a}|0 \enspace \text{und} \enspace
+     \mathfrak{a}|a, \mathfrak{a}|b \Rightarrow \mathfrak{a}|a \pm b \enspace \text{und} \enspace
+     \mathfrak{a}|a \Rightarrow \mathfrak{a}|ab \enspace \text{für alle} \enspace b \in \mathcal{O}_K.
+   \end{equation*}
+   Wenn dann auch noch gilt
+   \begin{equation*}
+     \mathfrak{a}|ab \Rightarrow \mathfrak{a}|b \enspace \text{oder} \enspace \mathfrak{a}|b,
+   \end{equation*}
+   bezeichnen wir $\mathfrak{a}$ als "Primideal-Faktor". Da wir von
+   einem Ideal-Fakor nur die Menge der Elemente kennen, die es teilt,
+   können wir diese Menge auch zur eindeutigen Beschreibung
+   nutzen. Somit ist $\mathfrak{a}$ eine Menge an Elementen aus
+   $\mathcal{O}_K$, für die gilt:
+   \begin{equation*}
+     0 \in \mathfrak{a} \enspace \text{und} \enspace
+     a \in \mathfrak{a}, b \in \mathfrak{a} \Rightarrow a \pm b \in \mathfrak{a} \enspace \text{und} \enspace
+     a \in \mathfrak{a} \Rightarrow ab \in \mathfrak{a} \enspace \text{für alle} \enspace b \in \mathcal{O}_K.
+   \end{equation*}
+   Und ein solches Ideal ist prim, wennn zusätzlich gilt:
+   \begin{equation*}
+     ab \in \mathfrak{a} \Rightarrow a \in \mathfrak{a} \enspace \text{oder} \enspace b \in \mathfrak{a}.
+   \end{equation*}
+   Ein Ideal-Faktor ist somit dass, was wir als /*Ideal*/ bezeichnen, und ein
+   Prim-Ideal-Faktor bezeichnen wir als /*Primideal*/.
+
+   Offensichtlich lässt sich das Produkt von zwei Idealen über
+   folgende Relation definieren:
+   \begin{equation*}
+     \mathfrak{a} \mathfrak{b} | c \Leftrightarrow c = \sum_i a_i b_i \enspace \text{mit} \enspace
+     \mathfrak{a} | a_i, \enspace \mathfrak{b} | b_i.
+   \end{equation*}
+   Anders ausgedrückt:
+   \begin{equation*}
+     \mathfrak{a} \mathfrak{b} = \left\{ \sum_i a_i b_i \enspace \text{mit} \enspace
+     a_i \in \mathfrak{a}, \enspace b_i \in \mathfrak{b} \right\}.
+   \end{equation*}
+
+   Man erkennt einfach, dass dieses Produkt wieder ein Ideal ist. Mit
+   $\mathfrak{a} = (a_1, \ldots, a_m)$ und $\mathfrak{b} = (b_1,
+   \ldots, b_n)$ ist somit
+   \begin{equation*}
+     \mathfrak{a} \cdot \mathfrak{b} = (a_1 b_1, \ldots, a_i b_j,
+     \ldots, a_m b_n).
+   \end{equation*}
+
+   Mit diesen Definition gewinnt man eine eindeutige Faktorisierung
+   zurück: Ist $a \ne 0$, dann exisiert eine im Kern eindeutige
+   Faktorisierung
+   \begin{equation*}
+      (a) = \mathfrak{p}_1 \cdots \mathfrak{p}_n \enspace \text{mit Primindealen} \enspace \mathfrak{p}_i.
+   \end{equation*}
+
+   Aus dem obigen Beispiel $6 = 2 \cdot 3 = (1 + \sqrt{-5}) (1 -
+   \sqrt{-5})$ wird jetzt
+   \begin{equation*}
+      (6) = (2, 1 + \sqrt{-5})^2(3, 1 + \sqrt{-5})(3, 1 - \sqrt{-5})
+   \end{equation*}
+   Es sind also folgende Behauptungen zu beweisen:
+   \begin{eqnarray*}
+      (2, 1 + \sqrt{-5})^2 & = & (2) \\
+      (3, 1 + \sqrt{-5})(3, 1 - \sqrt{-5}) & = & (3) \\
+      (2, 1 + \sqrt{-5})(3, 1 + \sqrt{-5}) & = & (1 + \sqrt{-5}) \\
+      (2, 1 + \sqrt{-5})(3, 1 - \sqrt{-5}) & = & (1 - \sqrt{-5}) \\
+   \end{eqnarray*}
+   Zum Beispiel gilt $(2, 1 + \sqrt{-5})(2, 1 + \sqrt{-5}) = (4, 2 + 2
+   \sqrt{-5}, 6)$. Man beachte dabei $6 = 2 + 2 \sqrt{-5} - (1 +
+   \sqrt{-5})^2$. Da jeder Generator durch $2$ teilbar ist, gilt
+   \begin{equation*}
+     (2, 1 + \sqrt{-5})(2, 1 + \sqrt{-5}) \subset (2).
+   \end{equation*}
+   Umgekehrt ist
+   \begin{equation*}
+     2 = 6 - 4 \in (4, 2 + 2 \sqrt{-5}, 6)
+   \end{equation*}
+   Folglich gilt $(2, 1 + \sqrt{-5})^2 = (2)$. Zudem sind die drei
+   Ideale $(2, 1 + \sqrt{-5})$, $(3, 1 + \sqrt{-5})$ und $(3, 1 -
+   \sqrt{-5})$ alle Primideale. Man betrachte z.B. die Abbildung
+   $\mathbb{Z} \to \mathbb{Z}[\sqrt{-5}]/(3, 1 - \sqrt{-5})$. Die
+   Abbildung ist surjektiv mit Kern $(3)$. Also gilt
+   \begin{equation*}
+     \mathbb{Z}[\sqrt{-5}]/(3, 1 - \sqrt{-5}) \simeq \mathfrak{Z}/(3),
+   \end{equation*}
+   einem Integritätsring.
