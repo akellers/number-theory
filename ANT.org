@@ -79,11 +79,11 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
 * Dramatis Personae
 
 - /Fermat/ (1601 - 1665). Postulierte das gleichnamige "Theorem" und
-  bewies für $m=4$. Er formulierte auch das Problem, die ganzzahligen
-  Lösungen der Gleichung $x^2 - ay^2=1$ für $a \in \mathbb{Z}$ zu
-  finden. Im Kern ist das die Frage nach den Einheiten in
-  $\mathbb{Z}[\sqrt{a}]$. Brouncker erfand einen Algorithmus hierfür,
-  unterließ es aber zu beweisen, dass der Algorithmus immer
+  bewies es für $m=4$. Er formulierte auch das Problem, die
+  ganzzahligen Lösungen der Gleichung $x^2 - ay^2=1$ für $a \in
+  \mathbb{Z}$ zu finden. Im Kern ist das die Frage nach den Einheiten
+  in $\mathbb{Z}[\sqrt{a}]$. Brouncker erfand einen Algorithmus
+  hierfür, unterließ es aber zu beweisen, dass der Algorithmus immer
   funktioniert.
 - /Euler/ (1707 - 1783): Er nutze Analysis zum Studium von Primzahlen
   und entdeckte eine frühe Version des quadratischen
