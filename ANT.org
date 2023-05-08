@@ -42,20 +42,20 @@
    - prime (number) :: Prim oder Primzahl
    - unit :: Einheit (eines Rings)
    - integral domain :: Integritätsring; ein nullteilerfreier
-	kommutativer Ring mit Einselement
+     kommutativer Ring mit Einselement
    - principal ideal domain :: Hautpidealring; ein Integritätsring, in
-	dem jedes Ideal ein Hauptideal ist
+     dem jedes Ideal ein Hauptideal ist
    - associate :: assoziiertes Element; assoziierte Elemente
-	unterscheiden sich nur um den Faktor einer Einheit.
+     unterscheiden sich nur um den Faktor einer Einheit.
    - algebraic integer :: Algebraisch ganze Zahl; Lösung eines
-	monischen Polynoms mit ganzzahligen Koeffizienten aus
-	$\mathbb{Z}$.
+     monischen Polynoms mit ganzzahligen Koeffizienten aus
+     $\mathbb{Z}$.
    - irreducible :: irreduzibel; d.h. keine Einheit und nicht
-	zerlegbar in ein Produkt irreduzibler Elemente
+     zerlegbar in ein Produkt irreduzibler Elemente
    - unique factorization domain (UFD) :: Faktorieller Ring (oder auch
-	Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
-	eindeutiger Zerlegung in irreduzible Faktoren für Elemente
-	ungleich 0.
+     Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
+     eindeutiger Zerlegung in irreduzible Faktoren für Elemente
+     ungleich 0.
 
    Andreas Kellers, November 2022 -- April 2023
 
