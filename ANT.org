@@ -42,11 +42,11 @@
    - prime (number) :: Prim oder Primzahl
    - unit :: Einheit (eines Rings)
    - integral domain :: Integritätsring; ein nullteilerfreier
-        kommuatitver Ring mit Einselement
+        kommutativer Ring mit Einselement
    - principal ideal domain :: Hautpidealring; ein Integritätsring, in
         dem jedes Ideal ein Hauptideal ist
-   - associate :: assoziiertes Element; assoziierte Elemente sind die
-        Produkte mit einer Einheit
+   - associate :: assoziiertes Element; assoziierte Elemente
+        unterscheiden sich nur um den Faktor einer Einheit.
    - algebraic integer :: Algebraisch ganze Zahl; Lösung eines
 	monischen Polynoms mit ganzzahligen Koeffizienten aus
 	$\mathbb{Z}$.
@@ -304,7 +304,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
 
    Wir werden sehen, dass zwar jedes Element von $\mathcal{O}_K$ als
    Produkt irreduzibler Elemente geschrieben werden kann (dies gilt
-   für alle Noehterscheren Ring), aber die Eindeutigkeit nicht immer
+   für alle Noetherscheren Ringe), aber die Eindeutigkeit nicht immer
    gegeben ist. In $\mathbb{Z}[\sqrt{-5}]$ gilt zum Beispiel:
    \begin{equation*}
      6 = 2 \cdot 3 = (1 + \sqrt{-5}) (1 - \sqrt{-5}).
@@ -346,7 +346,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    10 \cdot 21$. Naiv könnte man folgern, dass Faktorisierung in
    $\mathbb{Z}$ nicht eindeutig ist. Stattdessen ist an der darunter
    liegenden Faktorisierung $210 = (2 \cdot 3)(5 \cdot 7) = (2 \cdot
-   5)(3 \cdot 7) zu erkennen, dass diese sehr wohl eindeutig ist.
+   5)(3 \cdot 7)$ zu erkennen, dass diese sehr wohl eindeutig ist.
 
    Die Idee von Kummer und Dedekind war, die Menge der Primzahlen derart
    zu erweitern, die zum Beispiel in $\mathbb{Z}[\sqrt{-5}]$ eine
