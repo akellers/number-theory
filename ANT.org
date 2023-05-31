@@ -1,3 +1,5 @@
+# -*- fill-column: 100 -*-
+
 #+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
 #+options: author:t broken-links:nil c:nil creator:nil
 #+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:nil
@@ -25,236 +27,187 @@
 
 * Vorbemerkung
 
-  Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number
-  Theory" von J. S. Milne. Diese Übertragungen in das Deutsche basieren
-  auf der Version 3.08 vom 19. Juli 2020. Das englische Original ---
-  neben weiteren Texten und Notizen --- findet sich hier:
-  https://www.jmilne.org/math/CourseNotes/.
+  Die nachfolgenden Abschnitte basieren auf dem Buch "Algebraic Number Theory"
+  von J. S. Milne. Diese Übertragungen in das Deutsche basieren auf der Version 3.08
+  vom 19. Juli 2020. Das englische Original --- neben weiteren Texten und Notizen --- findet sich
+  hier: https://www.jmilne.org/math/CourseNotes/.
 
-  Dank gebührt damit immer dem Autor; etwaige Fehler, Ungenauigkeiten
-  und Ungelenkheiten gehen einzig und allein auf das Konto des
-  laienhaften Übersetzers.
+  Dank gebührt damit immer dem Autor; etwaige Fehler, Ungenauigkeiten und Ungelenkheiten gehen
+  einzig und allein auf das Konto des laienhaften Übersetzers.
 
   Andreas Kellers, November 2022 -- Mai 2023
 
 ** TODO Glossar der englischen Fachtermini
-   Hier ein kleines Glossar der zentralen englischen Fachbegriffe und
-   ihren Übersetzungen:
+   Hier ein kleines Glossar der zentralen englischen Fachbegriffe und ihren Übersetzungen:
 
    - prime (number) :: Prim oder Primzahl
    - unit :: Einheit (eines Rings)
-   - integral domain :: Integritätsring; ein nullteilerfreier
-     kommutativer Ring mit Einselement
-   - principal ideal domain :: Hautpidealring; ein Integritätsring, in
-     dem jedes Ideal ein Hauptideal ist
-   - associate :: assoziiertes Element; assoziierte Elemente
-     unterscheiden sich nur um den Faktor einer Einheit.
-   - algebraic integer :: Algebraisch ganze Zahl; Lösung eines
-     monischen Polynoms mit ganzzahligen Koeffizienten aus
-     $\mathbb{Z}$.
-   - irreducible :: irreduzibel; d.h. keine Einheit und nicht
-     zerlegbar in ein Produkt irreduzibler Elemente
-   - unique factorization domain (UFD) :: Faktorieller Ring (oder auch
-     Gaußscher Ring oder ZPE-Ring) ist ein Integritätsring mit
-     eindeutiger Zerlegung in irreduzible Faktoren für Elemente
+   - integral domain :: Integritätsring; ein nullteilerfreier kommutativer Ring mit Einselement
+   - principal ideal domain :: Hautpidealring; ein Integritätsring, in dem jedes Ideal ein
+     Hauptideal ist
+   - associate :: assoziiertes Element; assoziierte Elemente unterscheiden sich nur um den Faktor
+     einer Einheit.
+   - algebraic integer :: Algebraisch ganze Zahl; Lösung eines monischen Polynoms mit ganzzahligen
+     Koeffizienten aus $\mathbb{Z}$.
+   - irreducible :: irreduzibel; d.h. keine Einheit und nicht zerlegbar in ein Produkt irreduzibler
+     Elemente
+   - unique factorization domain (UFD) :: Faktorieller Ring (oder auch Gaußscher Ring oder ZPE-Ring)
+     ist ein Integritätsring mit eindeutiger Zerlegung in irreduzible Faktoren für Elemente
      ungleich 0.
 
 * Bibliografische Information
 
-Ein algebraischer Zahlkörper ist eine endliche Erweiterung von
-$\mathbb{Q}$; eine algebraische Zahl ist Element eines algebraischen
-Zahlkörpers. Algebraische Zahlentheorie untersucht die Arithmetik
-algebraischer Zahlkörper -- den Ring der ganzen Zahlen in dem
-Zahlkörper; den Idealen und Einheiten in diesem; das Maß, in dem
-eindeutige Faktorisierung standhält; und so weiter.
+  Ein algebraischer Zahlkörper ist eine endliche Erweiterung von $\mathbb{Q}$; eine algebraische
+  Zahl ist Element eines algebraischen Zahlkörpers. Algebraische Zahlentheorie untersucht die
+  Arithmetik algebraischer Zahlkörper -- den Ring der ganzen Zahlen in dem Zahlkörper; den Idealen
+  und Einheiten in diesem; das Maß, in dem eindeutige Faktorisierung standhält; und so weiter.
 
-Eine abelsche Körpererweiterung ist eine Galois-Erweiterung eines
-Körpers mit abelscher Galois-Gruppe. Klassenkörpertheorie beschreibt
-die abelschen Erweiterungen eines Zahlkörpers mit der Arithmetik des
-Körpers.
+  Eine abelsche Körpererweiterung ist eine Galois-Erweiterung eines Körpers mit abelscher
+  Galois-Gruppe. Klassenkörpertheorie beschreibt die abelschen Erweiterungen eines Zahlkörpers mit
+  der Arithmetik des Körpers.
 
-Diese Notizen sind der algebraischen Zahlentheorie gewidmet. Der
-Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
+  Diese Notizen sind der algebraischen Zahlentheorie gewidmet. Der Nachfolger beschäftigt sich dann
+  mit der Klassenkörpertheorie.
 
 * Dramatis Personae
 
-- /Fermat/ (1601 - 1665). Postulierte das gleichnamige "Theorem" und
-  bewies es für $m=4$. Er formulierte auch das Problem, die
-  ganzzahligen Lösungen der Gleichung $x^2 - ay^2=1$ für $a \in
-  \mathbb{Z}$ zu finden. Im Kern ist das die Frage nach den Einheiten
-  in $\mathbb{Z}[\sqrt{a}]$. Brouncker erfand einen Algorithmus
-  hierfür, unterließ es aber zu beweisen, dass der Algorithmus immer
-  funktioniert.
-- /Euler/ (1707 - 1783): Er nutze Analysis zum Studium von Primzahlen
-  und entdeckte eine frühe Version des quadratischen
-  Reziprozitätsgesetzes.
-- /Lagrange/ (1736 - 1813): Er bewies, dass der Algorithmus zur Lösung
-  der obigen Gleichung immer zu einer Lösung führt, und dass sich jede
-  positive ganze Zahl als Summe von vier Quadratzahlen darstellen
-  lässt.
-- /Legrendre/ (1752 - 1833): Führte das "Legrendre-Symbol"
-  $(\frac{m}{p})$ ein und fand die vollständige Form des quadratischen
-  Reziprozitätsgesetzes für ungerade Primzahlen $p$ und $q$:
-  \begin{equation*}
-    \left(\frac{p}{q}\right) \left(\frac{q}{q}\right) = (-1)^{(p-1)(q-1)/4}
-  \end{equation*}
-  Er bewies ein Ergebnis, dass folgendes lokal-global Prinzip für
-  quadratische Formen $Q(x, y, z)$ in drei Variablen über $\mathbb{Q}$
-  impliziert: $Q$ hat ein nicht-triviale Lösung in $\mathbb{Q}$ genau
-  dann, wenn es eine Lösung in $\mathbb{R}$ gibt und $Q \equiv 0
-  \pmod{ p^n}$ hat eine nicht-triviale Lösung für alle $p$ und $n$.
-- /Gauss/ (1777 - 1855): Fand den ersten Beweis des quadratischen
-  Reziprozitätsgesetzes. Er untersuchte die Gaussschen Zahlen
-  $\mathbb{Z}[i]$, um ein quartisches Reziprozitätsgesetz zu
-  finden. Er studierte die Klassifikation binärer quadratischer Formen
-  über $\mathbb{Z}$, die eng verbunden ist mit der Frage nach der
-  Klassenzahl quadratischer Zahlkörper.
-- /Dirichlet/ (1805 - 1859): Führte $L\text{-Reihen}$ ein und bewies mit
-  ihnen eine analytische Formel für die Klassenzahl und ein Theorem
-  zur Dichte der Primzahlen in arithmetischer Progression. Er bewies
-  folgendes "Einheiten-Theorem": Sei $\alpha$ eine Lösung des
-  irreduziblen Polynoms $f(x)$ mit ganzzahligen
-  Koeffizienten. Angenommen, $f(x)$ hat $r$ reelle und $2s$ komplexe
-  Wurzeln. Dann ist $\mathbb{Z}[\alpha]^\times$ eine endlich erzeugte
-  Gruppe vom Rang $r+s-1$.
-- /Kummer/ (1810 - 1893): Ausgelöst von der Suche nach höheren
-  Reziprozitätsgesetzen untersuchte er die grundlegende Arithmetik von
-  Kreisteilungskörpern und zeigte, dass die eindeutige Faktorisierung
-  durch die Einführung von "Idealen Zahlen" wiederhergestellt werden
-  kann. Und er bewies Fermats Theorem für reguläre Primzahlen.
-- /Hermite/ (1822 - 1901): Er machte wichtige Zuarbeiten zu
-  quadratischen Formen und zeigte, dass die Nullstellen eines Polynoms
-  vom Grad 5 mit elliptischen Funktionen ausgedrückt werden können.
-- /Eisenstein/ (1823 - 1852): Veröffentlichte als erster die
-  vollständigen Beweise für die kubischen und quartischen
-  Reziprozitätsgesetze.
-- /Kronecker/ (1823 - 1891): Er entwickelte eine Alternative zu
-  Dedekinds Idealen. Von ihm stammt eine der schönsten Ideen in der
-  Mathematik: Die Erzeugung abelscher Erweiterungen von Zahlkörpern
-  (/Kroneckers liebster Jugendtraum/).
-- /Riemann/ (1826 - 1866): Untersuchte die Riemannsche Zeta-Funktion
-  und stellte die Riemannsche Vermutung auf.
-- /Dedekind/ (1831 - 1916). Legte die modernen Grundlagen der
-  algebraischen Zahlentheorie durch eine korrekte Definition des Rings
-  der ganzen Zahlen in einem Zahlkörper. Er bewies, dass sich Ideale
-  eindeutig in Primideale zerlegen und diese, modulo
-  Prinzipal-Idealen, in endliche viele Klassen fallen. Und definierte
-  die Zeta-Funktion eines Zahlkörpers.
-- /Weber/ (1842 - 1913): Ihm gelangen wichtige Fortschritte in der
-  Klassenkörpertheorie und "Kroneckers Jugendtraum".
-- /Hensel/ (1861 - 1941): Definierte als erster $p\text{-adische}$
-  Zahlkörper (als Menge der unendlichen Summen $\sum_{n=-k}^\infty a_n
-  p^n, a_n \in \{0, 1, \dots, p-1\}$).
-- /Hilbert/ (1862 - 1943): Er verfasste in 1897 eine einflussreiche
-  erste Gesamtdarstellung über die algebraische Zahlentheorie. Einige
-  seiner berühmten Probleme zielten auf die Zahlentheorie und waren
-  ebenso einflussreich.
-- /Takagi/ (1875 - 1960): Bewies das Fundamentaltheorem der abelschen
-  Klassenkörpertheorie, wie durch Weber und Hilbert vermutet.
-- /Noether/ (1882 - 1935): Legte zusammen mit Artin die Grundlagen
-  moderner Algebra, die Axiome und eine konzeptionelle Argumentation
-  betont. Sie trug bei zur Klassifikation zentraler, einfacher
-  Algebren über Zahlkörper.
-- /Hecke/ (1887 - 1947): Führte Hecke $L\text{-Serien}$ als
-  Generalisierung von Dirichlets $L\text{-Serien}$ und Dedekinds
-  Zeta-Funktion ein.
-- /Artin/ (1898 - 1947): Fand das "Artinsche Reziprozitätsgesetz"
-  (als Verbesserung der Ergebnisse von Takagi), das
-  zentrale Theorem der Klassenkörpertheorie und führte die Artinschen
-  $L\text{-Reihen}$ ein.
-- /Hasse/ (1898 - 1979): Legte den ersten Beweis der lokalen
-  Klassenkörpertheorie vor, bewies das Lokal-Global-Prinzip von Hasse
-  und lieferte Beiträge zur Klassifikation der zentralen, einfachen
-  Algebren über Zahlkörpern.
-- /Brauer/ (1901 - 1977): Definierte die Brauer-Gruppe und war
-  beteiligt an der Klassifikation zentraler einfacher Algebren über
-  Zahlkörpern.
-- /Weil/ (1906 - 1998): Definierte die Weil-Gruppe, die eine
-  Vereinheitlichung von Artinschen und Heckeschen $L\mathrm{-Reihen}$
-  ermöglichte.
-- /Chevalley/ (1909 - 1984): Die Hauptaussagen der
-  Klassenkörpertheorie sind rein algebraisch, alle bisherigen Beweise
-  verwendeten die Analysis. Von Chevalley stammt der erste rein
-  algebraische Beweis. Seine Einführung von Idèlen erlaubte eine
-  natürliche Formulierung der Klassenkörpertheorie für abelsche
-  Erweiterungen.
-- /Iwasawa/ (1917 - 1998): Initiierte einen wichtigen neuen Ansatz in
-  der algebraischen Zahlentheorie auf Basis der Theorie von Kurven
-  über endlichen Körpern.
-- /Tate/ (1925 - 2019): Bewies neue Ergebnisse in der
-  Gruppen-Kohomologie, die eine elegante Neuformulierung der
-  Klassenkörpertheorie erlaubten. Mit Lubin fand er einen expliziten
-  Weg zur Generierung abelscher Erweiterungen lokaler Körper.
-- Langlands (1936 - ): Das Langslands-Programm ist eine breite Palette
-  an Vermutungen, unter anderem eine nicht-abelsche
-  Klassenkörpertheorie.
+  - /Fermat/ (1601 - 1665). Postulierte das gleichnamige "Theorem" und bewies es für $m=4$. Er
+    formulierte auch das Problem, die ganzzahligen Lösungen der Gleichung $x^2 - ay^2=1$ für $a \in
+    \mathbb{Z}$ zu finden. Im Kern ist das die Frage nach den Einheiten in
+    $\mathbb{Z}[\sqrt{a}]$. Brouncker erfand einen Algorithmus hierfür, unterließ es aber zu
+    beweisen, dass der Algorithmus immer funktioniert.
+  - /Euler/ (1707 - 1783): Er nutze Analysis zum Studium von Primzahlen und entdeckte eine frühe
+    Version des quadratischen Reziprozitätsgesetzes.
+  - /Lagrange/ (1736 - 1813): Er bewies, dass der Algorithmus zur Lösung der obigen Gleichung immer
+    zu einer Lösung führt, und dass sich jede positive ganze Zahl als Summe von vier Quadratzahlen
+    darstellen lässt.
+  - /Legrendre/ (1752 - 1833): Führte das "Legrendre-Symbol" $(\frac{m}{p})$ ein und fand die
+    vollständige Form des quadratischen Reziprozitätsgesetzes für ungerade Primzahlen $p$ und $q$:
+    \begin{equation*}
+      \left(\frac{p}{q}\right) \left(\frac{q}{q}\right) = (-1)^{(p-1)(q-1)/4}
+    \end{equation*}
+    Er bewies ein Ergebnis, dass folgendes lokal-global Prinzip für quadratische Formen $Q(x, y, z)$
+    in drei Variablen über $\mathbb{Q}$ impliziert: $Q$ hat ein nicht-triviale Lösung in
+    $\mathbb{Q}$ genau dann, wenn es eine Lösung in $\mathbb{R}$ gibt und $Q \equiv 0 \pmod{ p^n}$
+    hat eine nicht-triviale Lösung für alle $p$ und $n$.
+  - /Gauss/ (1777 - 1855): Fand den ersten Beweis des quadratischen Reziprozitätsgesetzes. Er
+    untersuchte die Gaussschen Zahlen $\mathbb{Z}[i]$, um ein quartisches Reziprozitätsgesetz zu
+    finden. Er studierte die Klassifikation binärer quadratischer Formen über $\mathbb{Z}$, die eng
+    verbunden ist mit der Frage nach der Klassenzahl quadratischer Zahlkörper.
+  - /Dirichlet/ (1805 - 1859): Führte $L\text{-Reihen}$ ein und bewies mit ihnen eine analytische
+    Formel für die Klassenzahl und ein Theorem zur Dichte der Primzahlen in arithmetischer
+    Progression. Er bewies folgendes "Einheiten-Theorem": Sei $\alpha$ eine Lösung des irreduziblen
+    Polynoms $f(x)$ mit ganzzahligen Koeffizienten. Angenommen, $f(x)$ hat $r$ reelle und $2s$
+    komplexe Wurzeln. Dann ist $\mathbb{Z}[\alpha]^\times$ eine endlich erzeugte Gruppe vom Rang
+    $r+s-1$.
+  - /Kummer/ (1810 - 1893): Ausgelöst von der Suche nach höheren Reziprozitätsgesetzen untersuchte
+    er die grundlegende Arithmetik von Kreisteilungskörpern und zeigte, dass die eindeutige
+    Faktorisierung durch die Einführung von "Idealen Zahlen" wiederhergestellt werden kann. Und er
+    bewies Fermats Theorem für reguläre Primzahlen.
+  - /Hermite/ (1822 - 1901): Er machte wichtige Zuarbeiten zu quadratischen Formen und zeigte, dass
+    die Nullstellen eines Polynoms vom Grad 5 mit elliptischen Funktionen ausgedrückt werden können.
+  - /Eisenstein/ (1823 - 1852): Veröffentlichte als erster die vollständigen Beweise für die
+    kubischen und quartischen Reziprozitätsgesetze.
+  - /Kronecker/ (1823 - 1891): Er entwickelte eine Alternative zu Dedekinds Idealen. Von ihm stammt
+    eine der schönsten Ideen in der Mathematik: Die Erzeugung abelscher Erweiterungen von
+    Zahlkörpern (/Kroneckers liebster Jugendtraum/).
+  - /Riemann/ (1826 - 1866): Untersuchte die Riemannsche Zeta-Funktion und stellte die Riemannsche
+    Vermutung auf.
+  - /Dedekind/ (1831 - 1916). Legte die modernen Grundlagen der algebraischen Zahlentheorie durch
+    eine korrekte Definition des Rings der ganzen Zahlen in einem Zahlkörper. Er bewies, dass sich
+    Ideale eindeutig in Primideale zerlegen und diese, modulo Prinzipal-Idealen, in endliche viele
+    Klassen fallen. Und definierte die Zeta-Funktion eines Zahlkörpers.
+  - /Weber/ (1842 - 1913): Ihm gelangen wichtige Fortschritte in der Klassenkörpertheorie und
+    "Kroneckers Jugendtraum".
+  - /Hensel/ (1861 - 1941): Definierte als erster $p\text{-adische}$ Zahlkörper (als Menge der
+    unendlichen Summen $\sum_{n=-k}^\infty a_n p^n, a_n \in \{0, 1, \dots, p-1\}$).
+  - /Hilbert/ (1862 - 1943): Er verfasste in 1897 eine einflussreiche erste Gesamtdarstellung über
+    die algebraische Zahlentheorie. Einige seiner berühmten Probleme zielten auf die Zahlentheorie
+    und waren ebenso einflussreich.
+  - /Takagi/ (1875 - 1960): Bewies das Fundamentaltheorem der abelschen Klassenkörpertheorie, wie
+    durch Weber und Hilbert vermutet.
+  - /Noether/ (1882 - 1935): Legte zusammen mit Artin die Grundlagen moderner Algebra, die Axiome
+    und eine konzeptionelle Argumentation betont. Sie trug bei zur Klassifikation zentraler,
+    einfacher Algebren über Zahlkörper.
+  - /Hecke/ (1887 - 1947): Führte Hecke $L\text{-Serien}$ als Generalisierung von Dirichlets
+    $L\text{-Serien}$ und Dedekinds Zeta-Funktion ein.
+  - /Artin/ (1898 - 1947): Fand das "Artinsche Reziprozitätsgesetz" (als Verbesserung der Ergebnisse
+    von Takagi), das zentrale Theorem der Klassenkörpertheorie und führte die Artinschen
+    $L\text{-Reihen}$ ein.
+  - /Hasse/ (1898 - 1979): Legte den ersten Beweis der lokalen Klassenkörpertheorie vor, bewies das
+    Lokal-Global-Prinzip von Hasse und lieferte Beiträge zur Klassifikation der zentralen, einfachen
+    Algebren über Zahlkörpern.
+  - /Brauer/ (1901 - 1977): Definierte die Brauer-Gruppe und war beteiligt an der Klassifikation
+    zentraler einfacher Algebren über Zahlkörpern.
+  - /Weil/ (1906 - 1998): Definierte die Weil-Gruppe, die eine Vereinheitlichung von Artinschen und
+    Heckeschen $L\mathrm{-Reihen}$ ermöglichte.
+  - /Chevalley/ (1909 - 1984): Die Hauptaussagen der Klassenkörpertheorie sind rein algebraisch,
+    alle bisherigen Beweise verwendeten die Analysis. Von Chevalley stammt der erste rein
+    algebraische Beweis. Seine Einführung von Idèlen erlaubte eine natürliche Formulierung der
+    Klassenkörpertheorie für abelsche Erweiterungen.
+  - /Iwasawa/ (1917 - 1998): Initiierte einen wichtigen neuen Ansatz in der algebraischen
+    Zahlentheorie auf Basis der Theorie von Kurven über endlichen Körpern.
+  - /Tate/ (1925 - 2019): Bewies neue Ergebnisse in der Gruppen-Kohomologie, die eine elegante
+    Neuformulierung der Klassenkörpertheorie erlaubten. Mit Lubin fand er einen expliziten Weg zur
+    Generierung abelscher Erweiterungen lokaler Körper.
+  - Langlands (1936 - ): Das Langslands-Programm ist eine breite Palette an Vermutungen, unter
+    anderem eine nicht-abelsche Klassenkörpertheorie.
 
 * TODO Einführung
 
   #+BEGIN_QUOTE
-  Es ist sehr zu beklagen, dass die Tugend [der rationalen Zahlen], in
-  Primzahlen zerlegbar zu sein, und immer in die gleichen für eine
-  gegebene Zahl, den ganzen Zahlen in Kreisteilungskörpern nicht zu
-  eigen ist. -- Kummer 1844 (übersetzt von André Weil).
+  Es ist sehr zu beklagen, dass die Tugend [der rationalen Zahlen], in Primzahlen zerlegbar zu sein,
+  und immer in die gleichen für eine gegebene Zahl, den ganzen Zahlen in Kreisteilungskörpern nicht
+  zu eigen ist. -- Kummer 1844 (übersetzt von André Weil).
   #+END_QUOTE
 
-  Das /*Fundamentaltheorem der Arithmetik*/ besagt, dass jede ganze Zahl
-  ungleich 0 geschrieben werden kann als
+  Das /*Fundamentaltheorem der Arithmetik*/ besagt, dass jede ganze Zahl ungleich 0 geschrieben
+  werden kann als
   \begin{equation*}
     m = \pm p_1 \cdots p_n, \quad p_i \enspace \text{Primzahlen,}
   \end{equation*}
   und dass diese Faktorisierung grundsätzlich eindeutig ist.
 
-  Betrachten wir allgemeiner einen Integritätsring $A$. Ein Element $a
-  \in A$ ist eine /*Einheit*/, wenn es in $A$ ein Inverses hat (ein
-  Element $b \in A$ mit $ab = 1 = ba$). Die multiplikative Gruppe der
-  Einheiten bezeichnen wir mit $A^\times$. Ein Element $\pi$ aus $A$
-  wird /*prim*/ genannt, wenn es weder die 0 ist, noch eine Einheit
-  und wenn gilt:
+  Betrachten wir allgemeiner einen Integritätsring $A$. Ein Element $a \in A$ ist eine /*Einheit*/,
+  wenn es in $A$ ein Inverses hat (ein Element $b \in A$ mit $ab = 1 = ba$). Die multiplikative
+  Gruppe der Einheiten bezeichnen wir mit $A^\times$. Ein Element $\pi$ aus $A$ wird /*prim*/
+  genannt, wenn es weder die 0 ist, noch eine Einheit und wenn gilt:
   \begin{equation*}
     \pi | ab \Rightarrow \pi | a \enspace \text{oder} \enspace \pi | b.
   \end{equation*}
 
-  Ist $A$ ein Hauptidealring, kann jedes Element $a$ von $A$ ungleich 0
-  geschrieben werden als
+  Ist $A$ ein Hauptidealring, kann jedes Element $a$ von $A$ ungleich 0 geschrieben werden als
   \begin{equation*}
     a = u \pi_1 \cdots \pi_{n}, \quad u \enspace \text{Einheit und}
 	\enspace \pi_{i} \enspace \text{Primelementen}
   \end{equation*}
-  und diese Faktorisierung ist eindeutig bis auf die Reihenfolge und
-  den Austausch von jedem $\pi_i$ durch ein Produkt mit einer
-  Einheit.
+  und diese Faktorisierung ist eindeutig bis auf die Reihenfolge und den Austausch von jedem $\pi_i$
+  durch ein Produkt mit einer Einheit.
 
-  Eine erste Frage lautet nun, inwieweit diese Eindeutigkeit der
-  Primfaktorzerlegung in Zahlkörpern Bestand hat oder nicht mehr
-  gilt. Diese Frage geht einher mit drei Problemen: Erstens ergibt
-  Faktorisierung in einem Körper nur Sinn unter Bezugnahme auf einen
-  Unterring. Wir benötigen also einen "Ring der ganzen Zahlen"
-  $\mathcal{O}_K$ in dem Zahlkörper $K$. Zweitens, da eine eindeutige
-  Faktorisierung im allgemeinen nicht gilt, benötigen wir einen Weg,
-  um zu messen, wie weit die eindeutige Faktorisierung nicht mehr
-  gilt. Und drittens benötigen wir, da Faktorisierung nur eindeutig
-  bis auf Einheiten definiert ist, ein Verständnis über die Struktur
-  der Gruppe der Einheiten $U_K$ in $\mathcal{O}_K$.
+  Eine erste Frage lautet nun, inwieweit diese Eindeutigkeit der Primfaktorzerlegung in Zahlkörpern
+  Bestand hat oder nicht mehr gilt. Diese Frage geht einher mit drei Problemen: Erstens ergibt
+  Faktorisierung in einem Körper nur Sinn unter Bezugnahme auf einen Unterring. Wir benötigen also
+  einen "Ring der ganzen Zahlen" $\mathcal{O}_K$ in dem Zahlkörper $K$. Zweitens, da eine eindeutige
+  Faktorisierung im allgemeinen nicht gilt, benötigen wir einen Weg, um zu messen, wie weit die
+  eindeutige Faktorisierung nicht mehr gilt. Und drittens benötigen wir, da Faktorisierung nur
+  eindeutig bis auf Einheiten definiert ist, ein Verständnis über die Struktur der Gruppe der
+  Einheiten $U_K$ in $\mathcal{O}_K$.
 
 ** Der Ring der ganzen Zahlen
 
-   Sei $K$ ein algebraischer Zahlkörper. Jedes Element $\alpha$ von
-   $K$ erfüllt eine Gleichung
+   Sei $K$ ein algebraischer Zahlkörper. Jedes Element $\alpha$ von $K$ erfüllt eine Gleichung
    \begin{equation*}
      \alpha^{n} + a_{1}\alpha^{n-1} + \cdots + a_{n} = 0
    \end{equation*}
-   mit Koeffizienten $a_1, \ldots, a_n$ in $\mathbb{Q}$. $\alpha$ ist
-   eine /*algebraische ganze Zahl*/, wenn es eine solche Gleichung mit
-   Koeffizienten $a_1, \ldots, a_n$ in $\mathbb{Z}$ erfüllt. Wir
-   werden sehen, dass die algebraischen ganzen Zahlen einen Unterring
-   $\mathcal{O}_K$ von $K$ bilden.
+   mit Koeffizienten $a_1, \ldots, a_n$ in $\mathbb{Q}$. $\alpha$ ist eine /*algebraische ganze
+   Zahl*/, wenn es eine solche Gleichung mit Koeffizienten $a_1, \ldots, a_n$ in $\mathbb{Z}$
+   erfüllt. Wir werden sehen, dass die algebraischen ganzen Zahlen einen Unterring $\mathcal{O}_K$
+   von $K$ bilden.
 
-   Eine algebraische Zahl ist genau dann eine ganze Zahl, wenn ihr
-   Minimalpolynom über $\mathbb{Q}$ Kooeffizienten in $\mathbb{Z}$
-   hat. Man betrachte z.B. den Körper $K = \mathbb{Q}[\sqrt{d}]$ mit
-   einer ganzen, quadratfreien Zahl $d$. Das Minimalpolynom von
-   $\alpha = a + b\sqrt{d}$ mit $b \neq 0$, $a, b \in \mathbb{Q}$ ist
+   Eine algebraische Zahl ist genau dann eine ganze Zahl, wenn ihr Minimalpolynom über $\mathbb{Q}$
+   Kooeffizienten in $\mathbb{Z}$ hat. Man betrachte z.B. den Körper $K = \mathbb{Q}[\sqrt{d}]$ mit
+   einer ganzen, quadratfreien Zahl $d$. Das Minimalpolynom von $\alpha = a + b\sqrt{d}$ mit $b \neq
+   0$, $a, b \in \mathbb{Q}$ ist
    \begin{equation*}
      (X - (a + b\sqrt{d})) (X - (a - b\sqrt{d}))
 	= X^{2} - 2aX + (a^{2} - b^{2}d),
@@ -263,29 +216,25 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    \begin{equation*}
      2a \in \mathbb{Z} \quad \text{und} \quad a^{2}-b^{2}d \in \mathbb{Z}.
    \end{equation*}
-   Hieraus folgt für den Fall $d = 2,3 \pmod 4$, dass $\alpha$ eine
-    algebraische ganze Zahl ist, wenn $a$ und $b$ ganze Zahlen sind,
-    d.h.:
+   Hieraus folgt für den Fall $d = 2,3 \pmod 4$, dass $\alpha$ eine algebraische ganze Zahl ist,
+   wenn $a$ und $b$ ganze Zahlen sind, d.h.:
    \begin{equation*}
      \mathcal{O}_{K} = \mathbb{Z}[\sqrt{d}]
        = \left\{a + b\sqrt{d} \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
    \end{equation*}
-   Im verbleibenden Fall $d = 1 \pmod 4$ ist $\alpha$ eine
-   algebraische ganze Zahl genau dann, wenn $a$ und $b$ beides ganze
-   Zahlen oder beide halbe Zahlen sind, d.h.:
+   Im verbleibenden Fall $d = 1 \pmod 4$ ist $\alpha$ eine algebraische ganze Zahl genau dann, wenn
+   $a$ und $b$ beides ganze Zahlen oder beide halbe Zahlen sind, d.h.:
    \begin{equation*}
      \mathcal{O}_{K} = \mathbb{Z}[\frac{1+\sqrt{d}}{2}]
        = \left\{a + b\frac{1+\sqrt{d}}{2} \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
    \end{equation*}
-   Zum Beispiel ist $\mathcal{O}_{\mathbb{Q}[\sqrt{-5}]} =
-   \mathbb{Z}[\sqrt{-5}]$ und $\mathcal{O}_{\mathbb{Q}[\sqrt{5}]} =
-   \mathbb{Z}[(1+\sqrt{5})/2]$. Man beachte, dass $(1 + \sqrt{5})/2$
-   der Gleichung $X^2 - X - 1$ genügt, also eine algebraische ganze
-   Zahl in $\mathbb{Q}[\sqrt{5}]$ ist.
+   Zum Beispiel ist $\mathcal{O}_{\mathbb{Q}[\sqrt{-5}]} = \mathbb{Z}[\sqrt{-5}]$ und
+   $\mathcal{O}_{\mathbb{Q}[\sqrt{5}]} = \mathbb{Z}[(1+\sqrt{5})/2]$. Man beachte, dass $(1 +
+   \sqrt{5})/2$ der Gleichung $X^2 - X - 1$ genügt, also eine algebraische ganze Zahl in
+   $\mathbb{Q}[\sqrt{5}]$ ist.
 
-   Sei $\zeta_d$ eine primitive $d\mathrm{te}$ Einheitswurzel, z.B. $\zeta_d =
-   \exp(2\pi i/d)$ und $K = \mathbb{Q}[\zeta_d]$. Wie zu hoffen,
-   werden wir sehen, dass
+   Sei $\zeta_d$ eine primitive $d\mathrm{te}$ Einheitswurzel, z.B. $\zeta_d = \exp(2\pi i/d)$ und
+   $K = \mathbb{Q}[\zeta_d]$. Wie zu hoffen, werden wir sehen, dass
    \begin{equation*}
      \mathcal{O}_K = \mathbb{Z}[\zeta_d]
        = \left\{ \sum m_i \zeta_d^i \quad \text{mit} \quad m_i \in \mathbb{Z} \right\}
@@ -293,73 +242,63 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
 
 ** Faktorisierung
 
-   Ein Element $\pi$ eines Integritätsrings $A$ wird als
-   /*irreduzibel*/ bezeichnet, wenn es keine Einheit ist und nicht
-   dargestellt werden kann als Produkt zweier Nicht-Einheiten. Ein
-   Primelement ist (offensichtlich) irreduzibel. Ein Ring $A$ ist ein
-   /*faktorieller Ring*/, wenn jedes Element ungleich 0 dargestellt
-   werden kann als im wesentlichen eindeutiges Produkt irreduzibler
-   Elemente. Ist der Ring der ganzen Zahlen $\mathcal{O}_K$ ein
-   faktorieller Ring? Nein, nicht im allgemeinen!
+   Ein Element $\pi$ eines Integritätsrings $A$ wird als /*irreduzibel*/ bezeichnet, wenn es keine
+   Einheit ist und nicht dargestellt werden kann als Produkt zweier Nicht-Einheiten. Ein Primelement
+   ist (offensichtlich) irreduzibel. Ein Ring $A$ ist ein /*faktorieller Ring*/, wenn jedes Element
+   ungleich 0 dargestellt werden kann als im wesentlichen eindeutiges Produkt irreduzibler
+   Elemente. Ist der Ring der ganzen Zahlen $\mathcal{O}_K$ ein faktorieller Ring? Nein, nicht im
+   allgemeinen!
 
-   Wir werden sehen, dass zwar jedes Element von $\mathcal{O}_K$ als
-   Produkt irreduzibler Elemente geschrieben werden kann (dies gilt
-   für alle Noetherscheren Ringe), aber die Eindeutigkeit nicht immer
-   gegeben ist. In $\mathbb{Z}[\sqrt{-5}]$ gilt zum Beispiel:
+   Wir werden sehen, dass zwar jedes Element von $\mathcal{O}_K$ als Produkt irreduzibler Elemente
+   geschrieben werden kann (dies gilt für alle Noetherscheren Ringe), aber die Eindeutigkeit nicht
+   immer gegeben ist. In $\mathbb{Z}[\sqrt{-5}]$ gilt zum Beispiel:
    \begin{equation*}
      6 = 2 \cdot 3 = (1 + \sqrt{-5}) (1 - \sqrt{-5}).
    \end{equation*}
-   Dass sowohl $2, 3, 1 + \sqrt{-5}$ und $1 - \sqrt{-5}$ irreduzibel
-   sind, erkannt man durch Anwendung der Norm-Abbildung:
+   Dass sowohl $2, 3, 1 + \sqrt{-5}$ und $1 - \sqrt{-5}$ irreduzibel sind, erkannt man durch
+   Anwendung der Norm-Abbildung:
    \begin{equation*}
      \mathrm{Nm}: \mathbb{Q}[\sqrt{-5}] \rightarrow \mathbb{Q}, \quad
        a + b \sqrt{-5} \mapsto a^2 + 5 b^2.
    \end{equation*}
-   Die Abbildung ist multiplikativ und man erkennt einfach, dass für
-   $\alpha \in \mathcal{O}_K$ gilt:
+   Die Abbildung ist multiplikativ und man erkennt einfach, dass für $\alpha \in \mathcal{O}_K$
+   gilt:
    \begin{equation*}
      \mathrm{Nm}(\alpha) = 1 \Leftrightarrow \alpha \bar{\alpha}
        \Leftrightarrow \alpha \enspace \text{ist eine Einheit}.
    \end{equation*}
-   Angenommen, $1 + \sqrt{-5} = \alpha \beta$, dann ist
-   $\mathrm{Nm}(\alpha \beta) = \mathrm{Nm}(1 + \sqrt{-5}) = 6$. Somit
-   muss $\mathrm{Nm}(\alpha) = 1, 2, 3$ oder $6$ sein. Im ersten Fall
-   wäre $\alpha$ eine Einheit. Die Fälle 2 und 3 treten nicht auf. Und
-   im letzten Fall ist $\beta$ eine Einheit. Die Definition der
-   Norm-Funktion impliziert, dass assoizierte Elemente die gleiche Norm
-   haben. Daher bleibt noch zu zeigen, dass $1 + \sqrt{-5}$ und $1 -
-   \sqrt{-5}$ nicht assoziiert sind, aber:
+   Angenommen, $1 + \sqrt{-5} = \alpha \beta$, dann ist $\mathrm{Nm}(\alpha \beta) = \mathrm{Nm}(1 +
+   \sqrt{-5}) = 6$. Somit muss $\mathrm{Nm}(\alpha) = 1, 2, 3$ oder $6$ sein. Im ersten Fall wäre
+   $\alpha$ eine Einheit. Die Fälle 2 und 3 treten nicht auf. Und im letzten Fall ist $\beta$ eine
+   Einheit. Die Definition der Norm-Funktion impliziert, dass assoizierte Elemente die gleiche Norm
+   haben. Daher bleibt noch zu zeigen, dass $1 + \sqrt{-5}$ und $1 - \sqrt{-5}$ nicht assoziiert
+   sind, aber:
    \begin{equation*}
      1 + \sqrt{-5} = (a + b\sqrt{-5}) (1 - \sqrt{-5})
    \end{equation*}
    hat keine Lösung mit $a, b \in \mathbb{Z}$.
 
-   Warum schlägt die eindeutige Faktorisierung in $\mathcal{O}_K$
-   fehl? Das Problem ist, dass irreduzible Elemente in $\mathcal{O}_K$
-   nicht mehr prim sein müssen. In dem obigen Beispiel ist $1 +
-   \sqrt{-5}$ ein Teiler von $2 \cdot 3$, aber weder ein Teiler von 2,
-   noch von 3. Faktorisierung in einem Integritätsring (in dem diese
-   existiert, z.B. einem Noetherschen Ring) ist nur dann eindeutig,
-   wenn alle irreduziblen Elemente auch prim sind.
+   Warum schlägt die eindeutige Faktorisierung in $\mathcal{O}_K$ fehl? Das Problem ist, dass
+   irreduzible Elemente in $\mathcal{O}_K$ nicht mehr prim sein müssen. In dem obigen Beispiel ist
+   $1 + \sqrt{-5}$ ein Teiler von $2 \cdot 3$, aber weder ein Teiler von 2, noch
+   von 3. Faktorisierung in einem Integritätsring (in dem diese existiert, z.B. einem Noetherschen
+   Ring) ist nur dann eindeutig, wenn alle irreduziblen Elemente auch prim sind.
 
-   Was lässt sich dennoch erreichen? Man betrachte $210 = 6 \cdot 35 =
-   10 \cdot 21$. Naiv könnte man folgern, dass Faktorisierung in
-   $\mathbb{Z}$ nicht eindeutig ist. Stattdessen ist an der darunter
-   liegenden Faktorisierung $210 = (2 \cdot 3)(5 \cdot 7) = (2 \cdot
-   5)(3 \cdot 7)$ zu erkennen, dass diese sehr wohl eindeutig ist.
+   Was lässt sich dennoch erreichen? Man betrachte $210 = 6 \cdot 35 = 10 \cdot 21$. Naiv könnte man
+   folgern, dass Faktorisierung in $\mathbb{Z}$ nicht eindeutig ist. Stattdessen ist an der darunter
+   liegenden Faktorisierung $210 = (2 \cdot 3)(5 \cdot 7) = (2 \cdot 5)(3 \cdot 7)$ zu erkennen,
+   dass diese sehr wohl eindeutig ist.
 
-   Die Idee von Kummer und Dedekind war, die Menge der Primzahlen derart
-   zu erweitern, die zum Beispiel in $\mathbb{Z}[\sqrt{-5}]$ eine
-   eindeutige Faktorisierung erlaubt. Dabei soll
+   Die Idee von Kummer und Dedekind war, die Menge der Primzahlen derart zu erweitern, die zum
+   Beispiel in $\mathbb{Z}[\sqrt{-5}]$ eine eindeutige Faktorisierung erlaubt. Dabei soll
    \begin{equation*}
      6 = (\mathfrak{p}_1^2)(\mathfrak{p}_2 \cdot \mathfrak{p}_3) =
        (\mathfrak{p}_1 \cdot \mathfrak{p}_2)(\mathfrak{p}_1 \cdot \mathfrak{p}_3)
    \end{equation*}
    der obigen Faktorisierung von 6 unterliegen.
 
-   Wie definieren wir "ideale Faktoren"? Offensichtlich sollte ein
-   Ideal charakterisiert sein durch die algbraischen ganzen Zahlen, die
-   es teilt. Darüber hinaus sollte für die Teilbarkeit durch ein
+   Wie definieren wir "ideale Faktoren"? Offensichtlich sollte ein Ideal charakterisiert sein durch
+   die algbraischen ganzen Zahlen, die es teilt. Darüber hinaus sollte für die Teilbarkeit durch ein
    Ideal $\mathfrak{a}$ folgende Regeln gelten:
    \begin{equation*}
      \mathfrak{a}|0 \enspace \text{und} \enspace
@@ -370,11 +309,9 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    \begin{equation*}
      \mathfrak{a}|ab \Rightarrow \mathfrak{a}|b \enspace \text{oder} \enspace \mathfrak{a}|b,
    \end{equation*}
-   bezeichnen wir $\mathfrak{a}$ als "Primideal-Faktor". Da wir von
-   einem Ideal-Fakor nur die Menge der Elemente kennen, die es teilt,
-   können wir diese Menge auch zur eindeutigen Beschreibung
-   nutzen. Somit ist $\mathfrak{a}$ eine Menge an Elementen aus
-   $\mathcal{O}_K$, für die gilt:
+   bezeichnen wir $\mathfrak{a}$ als "Primideal-Faktor". Da wir von einem Ideal-Fakor nur die Menge
+   der Elemente kennen, die es teilt, können wir diese Menge auch zur eindeutigen Beschreibung
+   nutzen. Somit ist $\mathfrak{a}$ eine Menge an Elementen aus $\mathcal{O}_K$, für die gilt:
    \begin{equation*}
      0 \in \mathfrak{a} \enspace \text{und} \enspace
      a \in \mathfrak{a}, b \in \mathfrak{a} \Rightarrow a \pm b \in \mathfrak{a} \enspace \text{und} \enspace
@@ -384,11 +321,10 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    \begin{equation*}
      ab \in \mathfrak{a} \Rightarrow a \in \mathfrak{a} \enspace \text{oder} \enspace b \in \mathfrak{a}.
    \end{equation*}
-   Ein Ideal-Faktor ist somit dass, was wir als /*Ideal*/ bezeichnen, und ein
-   Prim-Ideal-Faktor bezeichnen wir als /*Primideal*/.
+   Ein Ideal-Faktor ist somit dass, was wir als /*Ideal*/ bezeichnen, und ein Prim-Ideal-Faktor
+   bezeichnen wir als /*Primideal*/.
 
-   Offensichtlich lässt sich das Produkt von zwei Idealen über
-   folgende Relation definieren:
+   Offensichtlich lässt sich das Produkt von zwei Idealen über folgende Relation definieren:
    \begin{equation*}
      \mathfrak{a} \mathfrak{b} | c \Leftrightarrow c = \sum_i a_i b_i \enspace \text{mit} \enspace
      \mathfrak{a} | a_i, \enspace \mathfrak{b} | b_i.
@@ -399,23 +335,20 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
      a_i \in \mathfrak{a}, \enspace b_i \in \mathfrak{b} \right\}.
    \end{equation*}
 
-   Man erkennt einfach, dass dieses Produkt wieder ein Ideal ist. Mit
-   $\mathfrak{a} = (a_1, \ldots, a_m)$ und $\mathfrak{b} = (b_1,
-   \ldots, b_n)$ ist somit
+   Man erkennt einfach, dass dieses Produkt wieder ein Ideal ist. Mit $\mathfrak{a} = (a_1, \ldots,
+   a_m)$ und $\mathfrak{b} = (b_1, \ldots, b_n)$ ist somit
    \begin{equation*}
      \mathfrak{a} \cdot \mathfrak{b} = (a_1 b_1, \ldots, a_i b_j,
      \ldots, a_m b_n).
    \end{equation*}
 
-   Mit diesen Definition gewinnt man eine eindeutige Faktorisierung
-   zurück: Ist $a \ne 0$, dann exisiert eine im Kern eindeutige
-   Faktorisierung
+   Mit diesen Definition gewinnt man eine eindeutige Faktorisierung zurück: Ist $a \ne 0$, dann
+   exisiert eine im Kern eindeutige Faktorisierung
    \begin{equation*}
       (a) = \mathfrak{p}_1 \cdots \mathfrak{p}_n \enspace \text{mit Primindealen} \enspace \mathfrak{p}_i.
    \end{equation*}
 
-   Aus dem obigen Beispiel $6 = 2 \cdot 3 = (1 + \sqrt{-5}) (1 -
-   \sqrt{-5})$ wird jetzt
+   Aus dem obigen Beispiel $6 = 2 \cdot 3 = (1 + \sqrt{-5}) (1 - \sqrt{-5})$ wird jetzt
    \begin{equation*}
       (6) = (2, 1 + \sqrt{-5})^2(3, 1 + \sqrt{-5})(3, 1 - \sqrt{-5})
    \end{equation*}
@@ -426,9 +359,8 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
       (2, 1 + \sqrt{-5})(3, 1 + \sqrt{-5}) & = & (1 + \sqrt{-5}) \\
       (2, 1 + \sqrt{-5})(3, 1 - \sqrt{-5}) & = & (1 - \sqrt{-5}) \\
    \end{eqnarray*}
-   Zum Beispiel gilt $(2, 1 + \sqrt{-5})(2, 1 + \sqrt{-5}) = (4, 2 + 2
-   \sqrt{-5}, 6)$. Man beachte dabei $6 = 2 + 2 \sqrt{-5} - (1 +
-   \sqrt{-5})^2$. Da jeder Generator durch $2$ teilbar ist, gilt
+   Zum Beispiel gilt $(2, 1 + \sqrt{-5})(2, 1 + \sqrt{-5}) = (4, 2 + 2 \sqrt{-5}, 6)$. Man beachte
+   dabei $6 = 2 + 2 \sqrt{-5} - (1 + \sqrt{-5})^2$. Da jeder Generator durch $2$ teilbar ist, gilt
    \begin{equation*}
      (2, 1 + \sqrt{-5})(2, 1 + \sqrt{-5}) \subset (2).
    \end{equation*}
@@ -436,42 +368,33 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    \begin{equation*}
      2 = 6 - 4 \in (4, 2 + 2 \sqrt{-5}, 6)
    \end{equation*}
-   Folglich gilt $(2, 1 + \sqrt{-5})^2 = (2)$. Zudem sind die drei
-   Ideale $(2, 1 + \sqrt{-5})$, $(3, 1 + \sqrt{-5})$ und $(3, 1 -
-   \sqrt{-5})$ alle Primideale. Man betrachte z.B. die Abbildung
-   $\mathbb{Z} \to \mathbb{Z}[\sqrt{-5}]/(3, 1 - \sqrt{-5})$. Die
-   Abbildung ist surjektiv mit Kern $(3)$. Also gilt
+   Folglich gilt $(2, 1 + \sqrt{-5})^2 = (2)$. Zudem sind die drei Ideale $(2, 1 + \sqrt{-5})$, $(3,
+   1 + \sqrt{-5})$ und $(3, 1 - \sqrt{-5})$ alle Primideale. Man betrachte z.B. die Abbildung
+   $\mathbb{Z} \to \mathbb{Z}[\sqrt{-5}]/(3, 1 - \sqrt{-5})$. Die Abbildung ist surjektiv mit Kern
+   $(3)$. Also gilt
    \begin{equation*}
      \mathbb{Z}[\sqrt{-5}]/(3, 1 - \sqrt{-5}) \simeq \mathbb{Z}/(3),
    \end{equation*}
    einem Integritätsring.
 
-   Es bleibt die Frage, wie weit dies entferent ist von einer
-   eindeutigen Faktorisierung? Anders formuliert: Wie viele "ideale"
-   Elemente müssen zu den "wirklichen" Elementen hinzunehmen, um eine
-   eindeutige Faktorisierung zu erreichen. In einen bestimmten Sinn:
-   Nur endlich viele: Eine endliche Menge $S$ von solchen Idealen ist
-   ausreichend, um jedes Ideal darzustellen als $\mathfrak{a} \cdot
-   (a)$ mit $\mathfrak{a} \in S$ und $a \in \mathcal{O}_K$. Und noch
-   besser: Wir werden eine Gruppe "gebrochener" Ideale $I$ definieren,
-   in der die gebrochenen Hauptideale $(a), a \in K^\times$ eine
-   Untergruppe $P$ mit endlichem Index bilden. Dieser Index $(I:P)$
-   wird als *Klassenzahl* $h_K$ von $K$ bezeichnet. Wir werden zeigen,
-   dass
+   Es bleibt die Frage, wie weit dies entferent ist von einer eindeutigen Faktorisierung? Anders
+   formuliert: Wie viele "ideale" Elemente müssen zu den "wirklichen" Elementen hinzunehmen, um eine
+   eindeutige Faktorisierung zu erreichen. In einen bestimmten Sinn: Nur endlich viele: Eine
+   endliche Menge $S$ von solchen Idealen ist ausreichend, um jedes Ideal darzustellen als
+   $\mathfrak{a} \cdot (a)$ mit $\mathfrak{a} \in S$ und $a \in \mathcal{O}_K$. Und noch besser: Wir
+   werden eine Gruppe "gebrochener" Ideale $I$ definieren, in der die gebrochenen Hauptideale $(a),
+   a \in K^\times$ eine Untergruppe $P$ mit endlichem Index bilden. Dieser Index $(I:P)$ wird als
+   *Klassenzahl* $h_K$ von $K$ bezeichnet. Wir werden zeigen, dass
    \begin{equation*}
      h_K = 1 \Leftrightarrow \mathcal{O}_K \enspace \text{ist Hauptidealring}
       \Leftrightarrow  \text{Faktorisierung ist eindeutig in} \enspace \mathcal{O}_K
    \end{equation*}
-   Ein Theorem von Carlitz besagt, dass bei $h_K = 2$ die Anzahl der
-   Faktoren einer beliebigen Zahl aus $K$ unabhängig von der
-   Faktorisierung ist. Die Klassenzahl von $\mathbb{Q}[\sqrt{-5}]$ ist
-   $2$ und die Ideale $(3, 1+\sqrt{-5})$, $(3, 1-\sqrt{-5})$, $(7,
-   3+\sqrt{-5})$ und $(3, 1-\sqrt{-5})$ sind in
-   $\mathbb{Z}[\sqrt{-5}]$ prim. Somit stellt jedes das nicht-trivale
-   Elemment in $I/P$ dar. Und folglich ist das Produkt von zwei
-   beliebigen von ihnen ein Hauptideal. Damit erhalten wir drei
-   unterschiedliche Faktorisierungen von $21$ in
-   $\mathbb{Z}[\sqrt{-5}]$:
+   Ein Theorem von Carlitz besagt, dass bei $h_K = 2$ die Anzahl der Faktoren einer beliebigen Zahl
+   aus $K$ unabhängig von der Faktorisierung ist. Die Klassenzahl von $\mathbb{Q}[\sqrt{-5}]$ ist
+   $2$ und die Ideale $(3, 1+\sqrt{-5})$, $(3, 1-\sqrt{-5})$, $(7, 3+\sqrt{-5})$ und $(3,
+   1-\sqrt{-5})$ sind in $\mathbb{Z}[\sqrt{-5}]$ prim. Somit stellt jedes das nicht-trivale Elemment
+   in $I/P$ dar. Und folglich ist das Produkt von zwei beliebigen von ihnen ein Hauptideal. Damit
+   erhalten wir drei unterschiedliche Faktorisierungen von $21$ in $\mathbb{Z}[\sqrt{-5}]$:
    \begin{equation*}
      21 = 3 \cdot 7 = (4+\sqrt{-5}) \cdot (4-\sqrt{-5}) = (1 + 2\sqrt{-5}) \cdot (1 - 2\sqrt{-5}),
    \end{equation*}
