@@ -274,8 +274,8 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    algebraische ganze Zahl genau dann, wenn $a$ und $b$ beides ganze
    Zahlen oder beide halbe Zahlen sind, d.h.:
    \begin{equation*}
-     \mathcal{O}_{K} = \mathbb{Z}[(1+\sqrt{d})/2]
-       = \left\{a + b(1+\sqrt{d})/2 \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
+     \mathcal{O}_{K} = \mathbb{Z}[\frac{1+\sqrt{d}}{2}]
+       = \left\{a + b\frac{1+\sqrt{d}}{2} \quad \text{mit} \quad a,b \in \mathbb{Z}\right\}.
    \end{equation*}
    Zum Beispiel ist $\mathcal{O}_{\mathbb{Q}[\sqrt{-5}]} =
    \mathbb{Z}[\sqrt{-5}]$ und $\mathcal{O}_{\mathbb{Q}[\sqrt{5}]} =
@@ -395,7 +395,7 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    \end{equation*}
    Anders ausgedrückt:
    \begin{equation*}
-     \mathfrak{a} \mathfrak{b} = \left\{ \sum_i a_i b_i \enspace \text{mit} \enspace
+     \mathfrak{a} \mathfrak{b} = \left\{ \sum_i a_i b_i |
      a_i \in \mathfrak{a}, \enspace b_i \in \mathfrak{b} \right\}.
    \end{equation*}
 
@@ -442,6 +442,37 @@ Nachfolger beschäftigt sich dann mit der Klassenkörpertheorie.
    $\mathbb{Z} \to \mathbb{Z}[\sqrt{-5}]/(3, 1 - \sqrt{-5})$. Die
    Abbildung ist surjektiv mit Kern $(3)$. Also gilt
    \begin{equation*}
-     \mathbb{Z}[\sqrt{-5}]/(3, 1 - \sqrt{-5}) \simeq \mathfrak{Z}/(3),
+     \mathbb{Z}[\sqrt{-5}]/(3, 1 - \sqrt{-5}) \simeq \mathbb{Z}/(3),
    \end{equation*}
    einem Integritätsring.
+
+   Es bleibt die Frage, wie weit dies entferent ist von einer
+   eindeutigen Faktorisierung? Anders formuliert: Wie viele "ideale"
+   Elemente müssen zu den "wirklichen" Elementen hinzunehmen, um eine
+   eindeutige Faktorisierung zu erreichen. In einen bestimmten Sinn:
+   Nur endlich viele: Eine endliche Menge $S$ von solchen Idealen ist
+   ausreichend, um jedes Ideal darzustellen als $\mathfrak{a} \cdot
+   (a)$ mit $\mathfrak{a} \in S$ und $a \in \mathcal{O}_K$. Und noch
+   besser: Wir werden eine Gruppe "gebrochener" Ideale $I$ definieren,
+   in der die gebrochenen Hauptideale $(a), a \in K^\times$ eine
+   Untergruppe $P$ mit endlichem Index bilden. Dieser Index $(I:P)$
+   wird als *Klassenzahl* $h_K$ von $K$ bezeichnet. Wir werden zeigen,
+   dass
+   \begin{equation*}
+     h_K = 1 \Leftrightarrow \mathcal{O}_K \enspace \text{ist Hauptidealring}
+      \Leftrightarrow  \text{Faktorisierung ist eindeutig in} \enspace \mathcal{O}_K
+   \end{equation*}
+   Ein Theorem von Carlitz besagt, dass bei $h_K = 2$ die Anzahl der
+   Faktoren einer beliebigen Zahl aus $K$ unabhängig von der
+   Faktorisierung ist. Die Klassenzahl von $\mathbb{Q}[\sqrt{-5}]$ ist
+   $2$ und die Ideale $(3, 1+\sqrt{-5})$, $(3, 1-\sqrt{-5})$, $(7,
+   3+\sqrt{-5})$ und $(3, 1-\sqrt{-5})$ sind in
+   $\mathbb{Z}[\sqrt{-5}]$ prim. Somit stellt jedes das nicht-trivale
+   Elemment in $I/P$ dar. Und folglich ist das Produkt von zwei
+   beliebigen von ihnen ein Hauptideal. Damit erhalten wir drei
+   unterschiedliche Faktorisierungen von $21$ in
+   $\mathbb{Z}[\sqrt{-5}]$:
+   \begin{equation*}
+     21 = 3 \cdot 7 = (4+\sqrt{-5}) \cdot (4-\sqrt{-5}) = (1 + 2\sqrt{-5}) \cdot (1 - 2\sqrt{-5}),
+   \end{equation*}
+   alle der Länge 2.
