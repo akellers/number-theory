@@ -43,6 +43,7 @@
    - prime (number) :: Prim oder Primzahl
    - unit :: Einheit (eines Rings)
    - integral domain :: Integritätsring; ein nullteilerfreier kommutativer Ring mit Einselement
+   - principal ideal :: Hauptideal; von einem einzigen Element erzeugtes Ideal 
    - principal ideal domain :: Hautpidealring; ein Integritätsring, in dem jedes Ideal ein
      Hauptideal ist
    - associate :: assoziiertes Element; assoziierte Elemente unterscheiden sich nur um den Faktor
