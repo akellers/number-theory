@@ -378,10 +378,10 @@
    \end{equation*}
    einem Integritätsring.
 
-   Es bleibt die Frage, wie weit dies entferent ist von einer eindeutigen Faktorisierung? Anders
-   formuliert: Wie viele "ideale" Elemente müssen zu den "wirklichen" Elementen hinzunehmen, um eine
-   eindeutige Faktorisierung zu erreichen. In einen bestimmten Sinn: Nur endlich viele: Eine
-   endliche Menge $S$ von solchen Idealen ist ausreichend, um jedes Ideal darzustellen als
+   Es bleibt die Frage, wie weit dies entfernt ist von einer eindeutigen Faktorisierung? Anders
+   formuliert: Um wie viele "ideale" Elemente muss man die "wirklichen" Elementen ergänzen, um
+   wieder eine eindeutige Faktorisierung zu erreichen? In einen bestimmten Sinn nur endlich viele:
+   Eine endliche Menge $S$ von solchen Idealen ist ausreichend, um jedes Ideal darzustellen als
    $\mathfrak{a} \cdot (a)$ mit $\mathfrak{a} \in S$ und $a \in \mathcal{O}_K$. Und noch besser: Wir
    werden eine Gruppe "gebrochener" Ideale $I$ definieren, in der die gebrochenen Hauptideale $(a),
    a \in K^\times$ eine Untergruppe $P$ mit endlichem Index bilden. Dieser Index $(I:P)$ wird als
