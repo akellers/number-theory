@@ -388,7 +388,7 @@
    *Klassenzahl* $h_K$ von $K$ bezeichnet. Wir werden zeigen, dass
    \begin{equation*}
      h_K = 1 \Leftrightarrow \mathcal{O}_K \enspace \text{ist Hauptidealring}
-      \Leftrightarrow  \text{Faktorisierung ist eindeutig in} \enspace \mathcal{O}_K
+      \Leftrightarrow \text{Faktorisierung ist eindeutig in} \enspace \mathcal{O}_K
    \end{equation*}
    Ein Theorem von Carlitz besagt, dass bei $h_K = 2$ die Anzahl der Faktoren einer beliebigen Zahl
    aus $K$ unabhängig von der Faktorisierung ist. Die Klassenzahl von $\mathbb{Q}[\sqrt{-5}]$ ist
@@ -400,3 +400,41 @@
      21 = 3 \cdot 7 = (4+\sqrt{-5}) \cdot (4-\sqrt{-5}) = (1 + 2\sqrt{-5}) \cdot (1 - 2\sqrt{-5}),
    \end{equation*}
    alle der Länge 2.
+
+** Einheiten
+
+   Im Gegensatz zu $\mathbb{Z}$ kann der Ring $\mathcal{O}_K$ unendlich viele Einheiten
+   enthalten. Zum Beispiel ist $(1 + \sqrt{2})$ eine Einheit unendlicher Ordnung in
+   $\mathbb{Z}[\sqrt{2}]$,
+   \begin{equation*}
+     (1 + \sqrt{2})(1 - \sqrt{2}) = 1; \enspace (1 + \sqrt{2})^m \neq 1 
+       \enspace \text{für} \enspace m \neq 0.
+   \end{equation*}
+   Tatsächlich ist $\mathbb{Z}[\sqrt{2}]^\times = \{ \pm (1 + \sqrt{2})^m \enspace | \enspace m \in
+   \mathbb{Z} \}$ und somit ist 
+   \begin{equation*}
+     \mathbb{Z}[\sqrt{2}] \approx \{ \pm 1\} \times \{ \text{freie abelsche Gruppe vom Rang 1} \}
+   \end{equation*}
+   Generell kann gezeigt werden (mittels Einheiten-Theorem), dass die Wurzeln von $1$ in $K$ eine
+   endliche Gruppe $\mu(K)$ bilden und dass gilt:
+   \begin{equation*}
+     \mathcal{O}_K^times \approx \mu(K) \times \mathbb{Z}^r \emspace \text{als abelsche Gruppe}.
+   \end{equation*}
+   Und darüber hinaus werden wir auch $r$ bestimmen.
+
+** Anwendungen
+
+   Ein Treiber für die Entwicklung der Algebraischen Zahlentheorie war der Versuch, Fermats letztes
+   "Theorem" zu beweisen, dass es für $m \ge 3$ keine ganzzahligen Lösungen $(x, y, z)$ der
+   Gleichung
+   \begin{equation*}
+     X^m + Y^m = Z^m
+   \end{equation*}
+   mit $x$, $y$ und $z$ ungleich $0$ gibt.
+   
+   Für $m = 3$ kann die Vermutung per unendlichem Abstieg bewiesen werden: Unter der Annahme einer
+   Lösung wqird eine kleinere Lösung konstruiert, was letztendlich zu einem Widerspruch führt. Der
+   Beweis nutzt die Faktorisierung $X^3 = Z^3 - X^3 = (Z - X)(Z^2 + XZ + X^2)$. Stolperstein für
+   eine Übertragung auf größere $m$ ist, dass dann keine derartige Faktorisierung in Polynome mit
+   ganzahligen Koeffizienten von Grad $\eq 2$ existiert. Dies führte zur Betrachtung von
+   allgemeineren Faktorisierungen.
