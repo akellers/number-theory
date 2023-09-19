@@ -418,7 +418,7 @@
    Generell kann gezeigt werden (mittels Einheiten-Theorem), dass die Wurzeln von $1$ in $K$ eine
    endliche Gruppe $\mu(K)$ bilden und dass gilt:
    \begin{equation*}
-     \mathcal{O}_K^times \approx \mu(K) \times \mathbb{Z}^r \emspace \text{als abelsche Gruppe}.
+     \mathcal{O}_K^times \approx \mu(K) \times \mathbb{Z}^r \enspace \text{als abelsche Gruppe}.
    \end{equation*}
    Und darüber hinaus werden wir auch $r$ bestimmen.
 
@@ -436,5 +436,32 @@
    Lösung wqird eine kleinere Lösung konstruiert, was letztendlich zu einem Widerspruch führt. Der
    Beweis nutzt die Faktorisierung $X^3 = Z^3 - X^3 = (Z - X)(Z^2 + XZ + X^2)$. Stolperstein für
    eine Übertragung auf größere $m$ ist, dass dann keine derartige Faktorisierung in Polynome mit
-   ganzahligen Koeffizienten von Grad $\eq 2$ existiert. Dies führte zur Betrachtung von
+   ganzahligen Koeffizienten von Grad $\leq 2$ existiert. Dies führte zur Betrachtung von
    allgemeineren Faktorisierungen.
+
+   Ein berühmtes Ereignis war der Vortrag des französischen Mathematikers Lamé vor der Pariser
+   Akademie, in der er behauptete, Fermats Vermutung mittels folgender Ideen bewiesen zu haben. Es
+   sei $p > 2$ eine Primzahl und angenommen, $x^p + y^p = z^p$ habe eine ganzzahlige Lösung mit $x$,
+   $y$ und $z$ ungleich $0$. Die Lösung lässt sich umformen zu 
+   \begin{equation*}
+     x^p = z^p - y^p = \prod(z - \zeta^iy), \enspace 0 \leq i \leq p-1, \enspace \zeta = e^{2 \pi i/p}.
+   \end{equation*}
+
+   Hiermit zeigte er, wie man zu einer kleineren Lösung der Gleichung gelangt, folglich ein
+   Widerspruch. Liousville hinterfragte direkt einen Schritt in Lamés Beweis, bei dem er annimmt,
+   dass jeder Faktor $(z - \zeta^iy)$ eine $p$te Potenz ist, sodass es genügt zu zeigen, dass die
+   Faktoren paarweise teilerfremd sind und ihr Produkt eine $p$te Potenz ist. Tatsächlich konnte
+   Lamé seine Annahme nicht rechtfertigen: $\mathbb{Z}[\zeta]$ ist nicht immer ein Hauptidealring
+   und Fermats Theorem blieb weitere 150 Jahre unbewiesen. Dennoch bewies Kummer Fermats Theorem
+   kurz nach Lamés Scheitern für alle regulären Primzahlen mit seinen Erkenntnissen über die
+   Artithmetik in $\mathbb{Q}[\zeta]$, d.h. für alle Primzahlen $p$, die die Klassenzahl von
+   $\mathbb{Q}[\zeta_p]$ nicht teilen.
+   
+   Eine weitere Nutzung besteht in der Ermittlung von Galois Gruppen. Der Zerfällungskörper eines
+   Polynoms $f \in \mathbb{Q}[X]$ ist eine Galois-Erweiterung von $\mathbb{Q}$. Kurse zur
+   Galois-Theorie vermitteln die Ermittlung der Galois-Gruppe nur für Polynome kleinen Grades. Erst
+   die Algebraische Zahlentheorie erlaubt die Formulierung eines Algorithmus zur Bestimmung der
+   Galois-Gruppe für Polynome beliebigen Grades.
+
+   
+
