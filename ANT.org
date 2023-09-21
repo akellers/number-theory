@@ -154,7 +154,7 @@
   - Langlands (1936 - ): Das Langslands-Programm ist eine breite Palette an Vermutungen, unter
     anderem eine nicht-abelsche Klassenkörpertheorie.
 
-* TODO Einführung
+* Einführung
 
   #+BEGIN_QUOTE
   Es ist sehr zu beklagen, dass die Tugend [der rationalen Zahlen], in Primzahlen zerlegbar zu sein,
@@ -418,7 +418,7 @@
    Generell kann gezeigt werden (mittels Einheiten-Theorem), dass die Wurzeln von $1$ in $K$ eine
    endliche Gruppe $\mu(K)$ bilden und dass gilt:
    \begin{equation*}
-     \mathcal{O}_K^times \approx \mu(K) \times \mathbb{Z}^r \enspace \text{als abelsche Gruppe}.
+     \mathcal{O}_K^\times \approx \mu(K) \times \mathbb{Z}^r \enspace \text{als abelsche Gruppe}.
    \end{equation*}
    Und darüber hinaus werden wir auch $r$ bestimmen.
 
@@ -463,5 +463,61 @@
    die Algebraische Zahlentheorie erlaubt die Formulierung eines Algorithmus zur Bestimmung der
    Galois-Gruppe für Polynome beliebigen Grades.
 
-   
+* Vorbereitende Maßnahmen aus der Kommutativen Algebra
 
+  Viele der Resultate für Ringe ganzer Zahlen von Zahlkörpern gelten genereller für kommutative
+  Ringe. Daher ist es natürlicher, diese Beweise in diesem allgemeineren Kontext zu beweisen.
+
+** Grundlegende Definitionen 
+
+   Wir betrachten nur kommutative Ringe mit einem identitären Element --- d.h. ein Element 1, so
+   dass $1a = a$ für alle $a \in A$ --- und Homomorphismen von Ringen bilden die identitären
+   Elemente aufeinander ab.
+
+   Ein Ring $B$ mit einem Homomorphismus von Ringen $A \to B$ wird als *$A\text{-Algebra}$*
+   bezeichnet. Die Bezeichnung kommt vor allem bei Unterringen $A$ von $B$ zur Anwendung. Mit
+   Elementen $\beta_1, \ldots, \beta_m$ aus $B$ bezeichnet $A[\beta_1, \ldots, \beta_m]$ den
+   kleinsten Unterring von $B$, der die Elemente $\beta_i$ enthält. Er umfasst alle Polynome in den
+   $\beta_i$ mit Koeffizienten aus $A$, also Elementen der Form
+   \begin{equation*}
+     \sum a_{i_1 \ldots i_m} \beta_1^{i_1} \ldots \beta_m^{i_m}, \enspace a_{i_1 \ldots i_m} \in A.
+   \end{equation*}
+   Man bezeichnet $A[\beta_1, \ldots, \beta_m]$ als die $A\text{-Subalgebra}$ von $B$ erzeugt durch
+   die $\beta_i$. Wenn $A[\beta_1, \ldots, \beta_m] = B$ gilt, spricht man davon, dass die $\beta_i$
+   den Ring $B$ als $A\text{-Algebra}$ erzeugen.
+
+   Mit $(a_1, a_2, \ldots)$ bezeichnen wir für Elemente $a_1, a_2, \ldots$ aus $A$ das kleinste
+   Ideal, welches die $a_i$ enthält. Es besteht aus den endlichen Summen $\sum c_i a_i$ mit $c_i \in
+   A$ und wird als von den Elementen $a_1, a_2, \ldots$ erzeugtes Ideal bezeichnet. Mit Idealen
+   $\mathfrak{a}$ und $\mathfrak{b}$ definieren wir $\mathfrak{a} + \mathfrak{b} = \left\{a + b | a
+   \in \mathfrak{a}, b \in \mathfrak{b}\right\}$.
+
+   $\mathfrak{a} + \mathfrak{b}$ ist wiederum ein Ideal in $A$, das kleinste Ideal, welches
+   $\mathfrak{a}$ und $\mathfrak{b}$ umfasst. Mit $\mathfrak{a} = (a_1, \ldots a_m)$ und
+   $\mathfrak{b} = (b_1, \ldots b_n)$ ist $\mathfrak{a} + \mathfrak{b} = (a_1, \ldots a_m, b_1,
+   \ldots b_n)$.
+
+   Mit einem Ideal $\mathfrak{a}$ in $A$ kann man den Quotienten $A/\mathfrak{a}$ bilden. Es sei $f$
+   der Homomorphismus $f:A \to A/\mathfrak{a}$ mit $a \mapsto a + \mathfrak{a}$. Dann ist
+   $\mathfrak{b} \mapsto f^{-1}(\mathfrak{b})$ eine 1-zu-1 Korrespondenz zwischen den Idealen von
+   $A/\mathfrak{a}$ in den Idealn von $A$, die $\mathfrak{a}$ umfassen, und es gilt:
+   \begin{equation*}
+     A / f^{-1}(\mathfrak{b}) \simeq (A/\mathfrak{a}) / \mathfrak{b}
+   \end{equation*}
+
+   Ein Ideal $\mathfrak{a}$ von $A$ ist *prim*, wenn aus $ab \in \mathfrak{a}$ folgt, dass $a \in
+   \mathfrak{a}$ oder $b \in \mathfrak{a}$. Und ein Idela ist genau dann ein Primideal, wenn der
+   Quotientenring $A/\mathfrak{a}$ ein Integritätsring ist. Und ein Element $\pi$ von $A$ ungleich
+   $0$ ist *prim*, wenn das Ideal $(\pi)$ ein Primideal ist; dazu äquivlant ist $\pi | ab
+   \Rightarrow \pi|a \enspace \text{oder} \enspace \pi|b$.
+
+   Ein Ideal $\mathfrak{m}$ heißt *maximal*, wenn es maximal unter den echten Idealen von $A$ ist,
+   d.h. $\mathfrak{m} \neq A$ und es gibt kein Ideal $\mathfrak{a} \neq A$, das $\mathfrak{m}$
+   enthält, aber von $\mathfrak{a}$ verschieden ist. Ein Ideal $\mathfrak{a}$ ist maximal genau
+   dann, wenn $A/$\mathfrak{a}$ ein Körper ist. Jedes echte Ideal $\mathfrak{a}$ ist enthalten in
+   einem maximalen Ideal. Dies ist offensichtlich, sofern $A$ ein noetherscher Ring ist; ansonster
+   erfordert der Beweis Zorns Lemma. Inbesondere gilt: Jede Nicht-Einheit von $A$ ist enthalten in
+   einem maximalen Ideal. 
+
+   Dies hat Implikationen: $A$ ist ein euklidischer Ring $\Rightarrow$ $A$ it Hauptidealring
+   $\Rightarrow$ $A$ ist faktorieller Ring.
