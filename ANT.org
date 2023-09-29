@@ -521,3 +521,36 @@
 
    Dies hat Implikationen: $A$ ist ein euklidischer Ring $\Rightarrow$ $A$ it Hauptidealring
    $\Rightarrow$ $A$ ist faktorieller Ring.
+
+** Ideale in Produkten von Ringen
+
+   Proposition: Man betrachte ein Produkt von Ringen $A \times B$. Sind $\mathfrak{a}$ und
+   $\mathfrak{b}$ Ideal in $A$ bzw. $B$, dann ist $\mathfrak{a} \times \mathfrak{b}$ ein Ideal in $A
+   \times B$. Und jedes Ideal in $A \times B$ ist dieser Gestalt. Die Primideale in $A \times B$
+   haben die Form
+   \begin{equation*}
+     \mathfrak{p} \times B, \enspace \mathfrak{p} \enspace \text{Primideal in} \enspace A, 
+     A \times \mathfrak{p}, \enspace \mathfrak{p} \enspace \text{Primideal in} \enspace B.
+   \end{equation*}
+   Beweis: Sei $\mathfrak{c}$ ein Ideal in $A \times B$ und $\mathfrak{a} = \left\{a \in A | (a, 0)
+   \in \mathfrak{c}\right\}$ und $\mathfrak{b} = \left\{b \in B | (0, b) \in \mathfrak{c}\right\}$.
+   Offensichtlich gilt $\mathfrak{a} \times \mathfrak{b} \subset \mathfrak{c}$. Sei umgekehrt $(a, b)
+   \in \mathfrak{c}$. Dann ist $(a, 0) = (a, b) \cdot (1, 0) \in \mathfrak{c}$ und $(0, 0) = (a, b)
+   \cdot (0, 1) \in \mathfrak{c}$ und folglich $(a, b) \in \mathfrak{a} \times \mathfrak{b}$.
+   
+   Man erinnere sich, dass ein Ideal $\mathfrak{c} \in C$ ein Primideal ist, wenn $C / \mathfrak{c}$
+   ein Integritätsring ist. Die Abbildung $A \times B \to A / \mathfrak{a} \times B / \mathfrak{b},
+   \enspace (a, b) \mapsto (a + \mathfrak{a}, b + \mathfrak{b})$ hat den Kern $\mathfrak{a} \times
+   \mathfrak{b}$ und induziert somit einen Isomorphismus
+   \begin{equation*}
+     (A \times B) / (\mathfrak{a} \times \mathfrak{b}) \simeq A / \mathfrak{a} \times B / \mathfrak{b}.
+   \end{equation*}
+   Das Produkt von Ringen ist nur dann ein Integritätsring, wenn einer der Ringe 0 ist und der
+   andere ein Integrätsring.
+   
+   Anmerkung: Das Lemma lässt sich auf offensichtliche Weise erweitern auf endliche Produkte von
+   Ringen: Die Ideale von $A_1 \times \cdots \times A_m$ sind der Gestalt $\mathfrak{a}_1 \times
+   \cdots \times \mathfrak{a}_m$ mit Idealen $\mathfrak{a}_i$ in $A_i$ und $\mathfrak{a}_1 \times
+   \cdots \times \mathfrak{a}_m$ ist ein Primideal genau dann, wenn es genau ein $j$ gibt mit
+   $\mathfrak{a}_j$ ist Primideal in $A_j$ und $\mathfrak{a}_i = A_i$ für alle $i \neq j$.
+   
