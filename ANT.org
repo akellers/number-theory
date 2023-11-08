@@ -548,11 +548,11 @@
    Das Produkt von Ringen ist nur dann ein Integritätsring, wenn einer der Ringe 0 ist und der
    andere ein Integrätsring.
    
-   Anmerkung: Das Lemma lässt sich auf offensichtliche Weise erweitern auf endliche Produkte von
-   Ringen: Die Ideale von $A_1 \times \cdots \times A_m$ sind der Gestalt $\mathfrak{a}_1 \times
-   \cdots \times \mathfrak{a}_m$ mit Idealen $\mathfrak{a}_i$ in $A_i$ und $\mathfrak{a}_1 \times
-   \cdots \times \mathfrak{a}_m$ ist ein Primideal genau dann, wenn es genau ein $j$ gibt mit
-   $\mathfrak{a}_j$ ist Primideal in $A_j$ und $\mathfrak{a}_i = A_i$ für alle $i \neq j$.
+   Anmerkung: Das Lemma lässt sich offensichtlich erweitern auf endliche Produkte von Ringen: Die
+   Ideale von $A_1 \times \cdots \times A_m$ sind der Gestalt $\mathfrak{a}_1 \times \cdots \times
+   \mathfrak{a}_m$ mit Idealen $\mathfrak{a}_i$ in $A_i$ und $\mathfrak{a}_1 \times \cdots \times
+   \mathfrak{a}_m$ ist ein Primideal genau dann, wenn es genau ein $j$ gibt mit $\mathfrak{a}_j$ ist
+   Primideal in $A_j$ und $\mathfrak{a}_i = A_i$ für alle $i \neq j$.
    
 ** Noethersche Ringe
 
@@ -583,8 +583,8 @@
    erzeugte Ideal $(a_1, \dots, a_r, a)$ wäre ein Ideal in $\mathfrak{a}$, welches
    $\mathfrak{a}\prime$ enthielte, ein Widerspruch zur Bildung von $\mathfrak{a}\prime$.
 
-   Ein berühmters Theorem von Jilbert sagt aus, dass $k[X_1, \ldots, X_n]$ noethersch
+   Ein berühmtes Theorem von Hilbert sagt aus, dass $k[X_1, \ldots, X_n]$ noethersch
    ist. Praktisch alle Ringe in der algebraischen Zahlentheorie sind noethersch, aber nicht alle
-   Ringe sind noethersch, wie z.B. der Ring $k[X_1, \ldots, X_n, \ldots]$ der Polynome in unendlich
+   Ringe, wie z.B. der Ring $k[X_1, \ldots, X_n, \ldots]$ der Polynome in unendlich
    vielen Variablen.
 
