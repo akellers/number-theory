@@ -554,3 +554,37 @@
    \cdots \times \mathfrak{a}_m$ ist ein Primideal genau dann, wenn es genau ein $j$ gibt mit
    $\mathfrak{a}_j$ ist Primideal in $A_j$ und $\mathfrak{a}_i = A_i$ für alle $i \neq j$.
    
+** Noethersche Ringe
+
+   Ein Ring $A$ ist *noethersch*, wenn jedes Ideal in $A$ endlich erzeugt ist.
+
+   *Proposition 1.3*: Die folgenden Bedingungen für einen Ring $A$ sind äquivalent:
+
+   1) $A$ ist noethersch.
+   2) Jede aufsteigende Kette von Idealen $\mathfrak{a}_1 \subset \mathfrak{a}_2 \subset \ldots
+      \subset \mathfrak{a}_b \subset \ldots$ iwrd konstant, d.h. für ein bestimmtes $n$ gilt
+      $\mathfrak{a}_n = \mathfrak{a}_{n+1} = \ldots$.
+   3) Jede nichtleere Menge $S$ von Idealen in $A$ hat ein maximales Element, d.h. es gibt ein Ideal
+      in $S$, dass nicht in einem anderen Ideal in $S$ enthalten ist.
+
+   *Beweis*: Von 1) nach 2): $\mathfrak{a} = \bigcup \mathfrak{a}_i$ ist ein Ideal und damit endlich erzeugt. Sei
+   $\mathfrak{a} = (a_1, \ldots, a_r)$. Für ein $n$ wird $\mathfrak{a}_n$ alle $a_i$ enthalten, und
+   somit gilt $\mathfrak{a}_n = \mathfrak{a}_{n+1} = \ldots = \mathfrak{a}$.
+
+   Von 2) nach 3): Sei $\mathfrak{a}_1 \in S$. Ist $\mathfrak{a}_1$ nicht das maximale Ideal, gibt
+   es ein Ideal $\mathfrak{a}_2 \in S$ mit $\mathfrak{a}_1 \subsetneq \mathfrak{a}_2$. Ist
+   $\mathfrak{a}_2$ nicht maximal, existiert ein Ideal $\mathfrak{a}_3$ usw. Aus 2) folgt, dass
+   dieser Prozess nach endlichen Schritten zu einem maximalen Ideal $\mathfrak{a}_n$ führen wird.
+
+   Von 3) nach 1): Sei $\mathfrak{a}$ ein Ideal $A$ und sei $S$ die Menge der endlich erzeugten
+   Ideale in $\mathfrak{a}$. $S$ ist nicht leer, da es das Null-Ideal enthält. Somit gibt es auch
+   ein maximales Ideal $\mathfrak{a}\prime = (a_1, \dots, a_r)$. Wäre $\mathfrak{a}\prime \neq
+   \mathfrak{a}$, gäbe es ein $a \in \mathfrak{a} \setminus \mathfrak{a}\prime$ und das endlich
+   erzeugte Ideal $(a_1, \dots, a_r, a)$ wäre ein Ideal in $\mathfrak{a}$, welches
+   $\mathfrak{a}\prime$ enthielte, ein Widerspruch zur Bildung von $\mathfrak{a}\prime$.
+
+   Ein berühmters Theorem von Jilbert sagt aus, dass $k[X_1, \ldots, X_n]$ noethersch
+   ist. Praktisch alle Ringe in der algebraischen Zahlentheorie sind noethersch, aber nicht alle
+   Ringe sind noethersch, wie z.B. der Ring $k[X_1, \ldots, X_n, \ldots]$ der Polynome in unendlich
+   vielen Variablen.
+
